@@ -42,14 +42,18 @@ footer {
 .dropdown-toggle::after {
   display: none !important;
 }
-.signup-button, .login-button, 
+.signup-button, .login-button, .login-buttons-logout,
 .login-button-login, .login-button-signup {
   text-decoration: none;
   color: #EFEFEF !important;
   padding: 4px 8px;
   border-radius: 10%;
 }
-.login-button-login, .login-button-signup{
+.login-display-name {
+  margin-bottom: 10px;
+}
+.login-button-login, .login-button-signup,
+.login-buttons-logout,{
   margin-bottom: 0px; 
   background-color: #5cb85c;
   border-top: 1px solid #5cb85c;

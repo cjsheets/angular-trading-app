@@ -28,6 +28,10 @@ export class AuthService {
   }
 
   getUID() {
+    return Meteor.userId()
+  }
 
+  getAuthState(): boolean {
+    return !!Meteor.user();
   }
 }
