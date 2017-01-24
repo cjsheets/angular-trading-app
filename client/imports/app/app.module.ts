@@ -1,32 +1,22 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
 import { DemoDataService } from "./demo/demo-data.service";
 
+import { AppRoutingModule, routedComponents } from './routing.module';
+
 @NgModule({
-  // Components, Pipes, Directive
+  imports: [
+    BrowserModule,
+   AppRoutingModule
+  ],
   declarations: [
     AppComponent,
-    DemoComponent
+    routedComponents
   ],
-  // Entry Components
-  entryComponents: [
-    AppComponent
-  ],
-  // Providers
   providers: [
     DemoDataService
   ],
-  // Modules
-  imports: [
-    BrowserModule
-  ],
-  // Main Component
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor() {
-
-  }
-}
+export class AppModule { }

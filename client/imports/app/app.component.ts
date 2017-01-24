@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import template from "./app.component.html";
-import style from "./app.component.scss";
+import template from "./app.view.html";
+import style from "./app.view.scss";
 
 @Component({
   selector: "app",
