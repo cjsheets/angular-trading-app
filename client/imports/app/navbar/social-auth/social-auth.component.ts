@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 
 //import { AuthService } from '../auth.service';
+import template from "./social-auth.view.html";
+import style from "./social-auth.view.scss";
 
 @Component({
   selector: 'social-auth',
-  templateUrl: './social-auth.view.html',
-  styleUrls: ['./social-auth.view.css']
+  template,
+  styles: [ style ]
 })
 
 export class SocialAuthComponent {

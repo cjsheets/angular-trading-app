@@ -3,11 +3,13 @@ import { Component } from '@angular/core';
 import { Logger } from '../../shared/logger.service';
 
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import template from "./login-modal.view.html";
+import style from "./login-modal.view.scss";
 
 @Component({
   selector: 'login-modal',
-  templateUrl: './login-modal.view.html',
-  styleUrls: ['./login-modal.view.css'],
+  template,
+  styles: [ style ]
 })
 export class LoginModalComponent { 
   closeResult: string;
@@ -18,26 +20,26 @@ export class LoginModalComponent {
     private _log: Logger
   ) {}
 
-  open(content) {
-    this._log['log']( "Open Modal" );
-    this.modalService.open(content).result.then((result) => {
-      this._log['log']( "Modal:" );
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this._log['log']( "Close Modal:" );
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
-  }
+  // open(content) {
+  //   this._log['log']( "Open Modal" );
+  //   this.modalService.open(content).result.then((result) => {
+  //     this._log['log']( "Modal:" );
+  //     this.closeResult = `Closed with: ${result}`;
+  //   }, (reason) => {
+  //     this._log['log']( "Close Modal:" );
+  //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  //   });
+  // }
 
-  private getDismissReason(reason: any): string {
-    this._log['log']( "Dismiss Modal:" );
-    this._log['log']( reason );
-    if (reason === ModalDismissReasons.ESC) {
-      return 'by pressing ESC';
-    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-      return 'by clicking on a backdrop';
-    } else {
-      return  `with: ${reason}`;
-    }
-  }
+  // private getDismissReason(reason: any): string {
+  //   this._log['log']( "Dismiss Modal:" );
+  //   this._log['log']( reason );
+  //   if (reason === ModalDismissReasons.ESC) {
+  //     return 'by pressing ESC';
+  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+  //     return 'by clicking on a backdrop';
+  //   } else {
+  //     return  `with: ${reason}`;
+  //   }
+  // }
 }

@@ -12,6 +12,7 @@ import { RavenErrorHandler } from './sentry-io.service';
   imports: [
     CommonModule,
     HttpModule,
+    MasonryModule
   ],
   exports : [
     CommonModule,

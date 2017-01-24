@@ -1,9 +1,37 @@
 @import "{}/node_modules/bootstrap/scss/bootstrap.scss";
 
+* {
+	margin: 0;
+}
 body, html {
+  height: 100%;
   padding: 0;
   margin: 0;
-  background: #EEE;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.95rem;
+}
+#wrap {
+  min-height: 100%;
+	margin-bottom: -100px; 
+}
+#wrap:after {
+  content: "";
+  display: block;
+}
+
+nav{
+  border-bottom: 1px solid #CCCCCC;
+}
+
+footer, #wrap:after {
+	height: 100px; 
+}
+
+footer {
+  clear:both;
+  padding-top:20px;
+  color: #999999;
+  font-size: 0.9rem;
 }
 
 
@@ -29,15 +57,6 @@ body, html {
     color: rgba(255, 255, 255, 0.7);
     background-color: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.2);
-}
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 90px;
-  color: #999999;
-  font-size: 0.9rem;
 }
 .credit {
   color: rgba(150, 150, 150, 0.5);
@@ -78,22 +97,6 @@ color: rgba(255, 255, 255, 0.4) !important;
 
   flex: 1 1 auto;
 
-}
-body, html {
-  padding: 0;
-  margin: 0;
-  background-color: unset;
-}
-body {
-  margin-bottom: 100px;
-  font-family: 'Roboto', sans-serif;
-}
-html { 
-  background: url('image/17390996656_69abfbab23_o_scale-mask.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
 .app {
