@@ -1,0 +1,97 @@
+
+.pin{
+  max-width: 200px;
+}
+
+.pixel-image{
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.alert{
+  padding: 0.25rem 1.25rem;
+  margin: 15px 0px 0px;
+}
+
+/** Bricks **/
+
+/* Polls Component */
+
+.brick {
+  margin: 10px;
+  padding: 10px;
+  background-color: #F9F9F9;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.brick-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 15px 15px 30px 15px;
+  border-bottom: 1px solid #eceeef;
+  background: rgba(0, 146, 226, 0.1);
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
+.brick-body {
+    position: relative;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0px;
+    background-color: #EEEEEE;
+}
+.brick-body div {
+    display: flex
+}
+.brick-button {
+  margin: auto;
+  justify-content: center;
+  flex-grow: 1;
+  padding: 10px 0px;
+}
+.brick-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  padding: 6px 0px 4px;
+  background: #DDDDDD;
+  color: #333333;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  vertical-align:middle
+}
+.brick-footer i {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+.brick-footer a, .brick-footer a:hover {
+  color: #666666;
+}
+.brick:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2); 
+}
+.redheart {
+  color: #d40000;
+}
