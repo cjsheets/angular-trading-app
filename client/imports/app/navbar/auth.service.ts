@@ -2,6 +2,8 @@
  *|  Auth Service - Firebase
  */
 import { Injectable } from '@angular/core';
+import { MongoObservable } from 'meteor-rxjs';
+import { Meteor } from 'meteor/meteor';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';

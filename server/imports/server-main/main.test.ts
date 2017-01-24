@@ -4,7 +4,7 @@ import * as spies from "chai-spies";
 import StubCollections from "meteor/hwillson:stub-collections";
 
 import { Main } from "./main";
-import { DemoCollection } from "../../../both/collections/demo.collection";
+import { DemoCollection } from "../../../shared/collections/demo.collection";
 
 chai.use(spies);
 

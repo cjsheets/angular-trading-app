@@ -34,6 +34,50 @@ footer {
   font-size: 0.9rem;
 }
 
+// Navbar ----
+.login-buttons .content-container {
+  right: 0 !important;
+  left: auto !important;
+}
+.dropdown-toggle::after {
+  display: none !important;
+}
+.signup-button, .login-button, 
+.login-button-login, .login-button-signup {
+  text-decoration: none;
+  color: #EFEFEF !important;
+  padding: 4px 8px;
+  border-radius: 10%;
+}
+.login-button-login, .login-button-signup{
+  margin-bottom: 0px; 
+  background-color: #5cb85c;
+  border-top: 1px solid #5cb85c;
+  border-right: 1px solid #5cb85c;
+  border-bottom: 1px solid #5cb85c;
+  border-left: 1px solid #5cb85c;
+}
+.signup-button, .login-button{
+  position: absolute;
+  bottom: 28px;
+  right: 12px;
+  background-color: rgb(2, 117, 216);
+  border-top: 1px solid rgb(2, 117, 216);
+  border-right: 1px solid rgb(2, 117, 216);
+  border-bottom: 1px solid rgb(2, 117, 216);
+  border-left: 1px solid rgb(2, 117, 216);
+}
+.accounts-close{
+  color: #333333;
+  font-size: 0.85rem;
+  text-decoration: none !important;
+  padding-top: 3px;
+  padding-right: 4px;
+}
+
+.login-buttons-login-form{
+  line-height: 20px;
+}
 
 .debug-container, .debug-container a:hover, {
   font-size: 0.8rem;
