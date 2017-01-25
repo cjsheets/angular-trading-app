@@ -7,24 +7,52 @@
         [useImagesLoaded]="true" class="brick-parent">
         <masonry-brick class="brick" *ngFor="let brick of bricks"
           class="brick-container brick" [class.stamp]="brick.first">
-            <div class="brick-body">
+            <div class="brick-body" *ngIf="!brick.first">
               <img class="pin" [src]="brick.image" style="width: 175px;">
-              <span class="overlay">Offer Trade</span>
+              <span class="overlay">
+              </span>
+              <span class="overlay-trade">
+                <div class="overlay-controls">
+                  <span class="ot-left">
+                    <a href="{{brick.id}}">
+                      <i class="zmdi zmdi-lastfm"></i>
+                    </a>
+                  </span>
+                  <span class="ot-right">
+                    <i class="zmdi zmdi-swap"
+                      [routerLink]="['/at/request/' + brick.rid]" ></i>
+                  </span>
+                </div>
+              </span>
             </div>
-          <div class="brick-footer">
-            <ul>
-            <li><b>Artist:</b> </li>
-    <li *ngIf="!brick.first">Album</li>
-    <li *ngIf="brick.first"> First</li>
-            </ul>
-          </div>
+            <div class="brick-body" *ngIf="brick.first">
+              <img class="pin" [src]="brick.image" style="width: 175px;">
+              <span class="overlay-first">
+                <p class="ot-left2-first">
+                  <a [routerLink]="['/at/records/find']">
+                    <i class="zmdi zmdi-album"></i> List an Album
+                  </a>
+                </p>
+                <p class="ot-left1-first">
+                  <a [routerLink]="['/at/my-listings']">
+                    <i class="zmdi zmdi-edit"></i> Manage Listings
+                  </a>
+                </p>
+              </span>
+            </div>
+            <div class="brick-footer" *ngIf="!brick.first">
+            <p> <b>{{brick.artist}}:</b> {{brick.name}}</p>
+            </div>
+            <div class="brick-footer" *ngIf="brick.first" >
+              <b style="margin: auto">List albums for trade!</b>
+            </div>
           </masonry-brick>
       </masonry>
       <div style="clear: both"></div>
     </div>
     <div class="col-sm text-center" *ngIf="bricks.length === 0">
       <br><br>
-      <p>Create a <a [routerLink]="['/at']">New Pin</a> to get started!</p>
+      <p>Create a <a [routerLink]="['/at']">Add Records</a> to get started!</p>
       <br><br>
     </div>
   </div>

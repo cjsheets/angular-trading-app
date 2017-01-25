@@ -86,16 +86,23 @@
   align-items: center;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  padding: 6px 0px 4px;
+  padding: 6px 6px 4px;
   background: #FFFFFF;
   color: #333333;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
-  vertical-align:middle
+  vertical-align:middle;
+  max-width: 175px;
+  height: 50px;
+  font-size: 0.9rem;
 }
 .brick-footer i {
   cursor: pointer;
   font-size: 1.2rem;
+}
+.brick-footer p {
+  padding: 0;
+  margin: 0;
 }
 .brick-footer a, .brick-footer a:hover {
   color: #666666;
@@ -108,7 +115,7 @@
 }
 
 
-.overlay{
+.overlay, .overlay-trade, {
   -moz-border-radius: 2px;
   border-radius: 2px;
   -moz-opacity: 0;
@@ -116,8 +123,21 @@
   filter: alpha(opacity=0);
   -moz-transition: all .25s ease;
   transition: all .25s ease;
-  background: rgba(0,0,0,0.4);
-  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.overlay-first{
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -moz-opacity: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-transition: all .25s ease;
+  transition: all .25s ease;
   height: 100%;
   left: 0;
   position: absolute;
@@ -125,7 +145,60 @@
   width: 100%;
 }
 
+.overlay-trade:hover, .overlay-first:hover{
+  opacity: 1;
+}
 
-.overlay:hover{
-  opacity: 0.8;
+.overlay:hover {
+  opacity: 1;
+}
+.overlay-trade {
+  color: #FFFFFF;
+  font-size: 1.8rem;
+}
+.overlay-first, .overlay-first a {
+  color: #222222;
+  font-size: 0.9rem;
+  vertical-align:middle;
+}
+.overlay-first a, .overlay-first a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+.overlay-first i {
+  font-size: 1.2rem;
+  vertical-align:middle;
+  padding: 0px 6px;
+}
+.ot-left i, .ot-right i {
+  cursor: pointer;
+}
+.ot-left, .ot-right {
+  height: 40px;
+  width: 40px;
+}
+.ot-left a, .ot-right a {
+  color: #FFFFFF;
+}
+.ot-left a:hover, .ot-right a:hover {
+  color: #DDDDDD;
+}
+.ot-right{
+  padding-top: 130px;
+  padding-left: 90px;
+}
+.ot-left{
+  padding-top: 130px;
+  padding-left: 20px;
+}
+.ot-left1-first, .ot-left2-first{
+  vertical-align:middle;
+  padding-top: 30px;
+  padding-left: 4px;
+}
+/* clearfix */
+.ot-left1-first:after {
+  content: '';
+  display: block;
+  clear: both;
 }

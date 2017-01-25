@@ -35,14 +35,17 @@ export class RecordsComponent implements OnInit {
 
   ngOnInit(): void {
     this.records = RecordCollection.find({}).zone();
-    let firstBrick = true;
+    this.bricks = [];
+    this.bricks.push({image: '/img/record.png', first: true})
     this.records.subscribe(pins => {
-      this.bricks = [];
-      if(firstBrick) this.bricks.push({image: '/img/record.png', first: true})
-      firstBrick = false
-      pins.forEach(pin => {
-         this.bricks.push(pin)
-      });
+      let pin = pins[pins.length - 1];
+      pin.rid = btoa(pin._id);
+      this.bricks.push(pin)
+      // pins added to pin on each itteration for some reason
+      // pins.forEach(pin => {
+      //     pin.rid = btoa(pin._id);
+      //    this.bricks.push(pin)
+      // });
     });
   }
 
