@@ -8,9 +8,9 @@ export interface Records {
 }
 
 export interface Traders {
-  id: string;
-  requests?: Transaction[];
-  offers?: Transaction[];
+  id        : string;
+  requests ?: Transaction[];
+  offers   ?: Transaction[];
 }
 
 export interface Transaction {

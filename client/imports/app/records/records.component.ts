@@ -14,6 +14,7 @@ import template from "./records.view.html";
 import style from "./records.view.scss";
 
 
+
 @Component({
   selector: 'records',
   template,
@@ -21,6 +22,7 @@ import style from "./records.view.scss";
 })
 export class RecordsComponent implements OnInit { 
   records: Observable<any[]>;
+  private bricks: Array<{}> = [];
 
   constructor(
     private _log: Logger,
@@ -33,6 +35,12 @@ export class RecordsComponent implements OnInit {
 
   ngOnInit(): void {
     this.records = RecordCollection.find({}).zone();
+    this.records.subscribe(pins => {
+      this.bricks = [];
+      pins.forEach(pin => {
+         this.bricks.push(pin)
+      });
+    });
   }
 
 }
