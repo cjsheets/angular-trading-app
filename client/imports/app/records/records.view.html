@@ -1,3 +1,9 @@
 Records
 
 <p> This is where the records go</p>
+
+  <ul>
+    <li *ngFor="let record of records | async">
+      <p>{{record.id}}</p>
+    </li>
+  </ul>

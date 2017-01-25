@@ -1,12 +1,20 @@
 import {DemoCollection} from "../../../shared/collections/demo.collection";
 import {Demo} from "../../../shared/models/demo.model";
+import { loadRecords, loadTraders } from "../fixtures/trading.fixture";
+  
 
 export class Main {
   start(): void {
     this.initFakeData();
+    this.initFakeDemoData();
   }
 
   initFakeData(): void {
+    loadRecords();
+    loadTraders();
+  }
+
+  initFakeDemoData(): void {
     if (DemoCollection.find({}).cursor.count() === 0) {
       const data: Demo[] = [{
         name: "Dotan",
