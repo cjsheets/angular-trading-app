@@ -2,15 +2,20 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm" *ngIf="bricks.length > 0">
-      <masonry [options]="{transitionDuration: '0.0000001s'}" [useImagesLoaded]="true">
-        <masonry-brick class="brick" *ngFor="let brick of bricks">
+      <masonry [options]="{transitionDuration: '0.0000001s', stamp: '.stamp',
+        columnWidth: '.brick-container', fitWidth: true}"
+        [useImagesLoaded]="true" class="brick-parent">
+        <masonry-brick class="brick" *ngFor="let brick of bricks"
+          class="brick-container brick" [class.stamp]="brick.first">
             <div class="brick-body">
               <img class="pin" [src]="brick.image" style="width: 175px;">
+              <span class="overlay">Offer Trade</span>
             </div>
           <div class="brick-footer">
             <ul>
-            <li><b>Artist:</b> {{brick.artist}}</li>
-            <li><b>Album:</b> </li>
+            <li><b>Artist:</b> </li>
+    <li *ngIf="!brick.first">Album</li>
+    <li *ngIf="brick.first"> First</li>
             </ul>
           </div>
           </masonry-brick>
