@@ -5,6 +5,7 @@ import { RecordCollection, TraderCollection } from "../../../../shared/collectio
 
 // import {NgbTooltip} from '@ng-bootstrap/ng-bootstrap';
 
+import { ApiService } from '../shared/api.service';
 import { Logger } from '../shared/logger.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -27,6 +28,7 @@ export class RecordsComponent implements OnInit {
   private currentRoute: string;
 
   constructor(
+    private _api: ApiService,
     private _log: Logger,
     private _auth: AuthService,
     private route: ActivatedRoute,
@@ -60,8 +62,12 @@ export class RecordsComponent implements OnInit {
 
   }
 
-  search(){
-    
+  search(value){
+    this._api.getAlbums$(value.artist)
+      .subscribe(albums => {
+        this.bricks = [];
+        console.log(albums)
+      });
   }
 
 }

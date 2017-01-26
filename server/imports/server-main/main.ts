@@ -27,7 +27,6 @@ export class Main {
         return next(); // only allow logged in users access to API
       var proxyUrl = baseUrl + url.parse(req.originalUrl).query.replace(/(&?)u=.*?&/g, '')
         + '&api_key=' + apiKey; // replace() removes the userid string
-        console.log(proxyUrl)
       req.pipe(request(proxyUrl)).pipe(res);
     });
   }
