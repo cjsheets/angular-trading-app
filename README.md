@@ -83,3 +83,7 @@ The `DemoComponent` contains example for Angular 2 tests for Component, and in t
 ## To-Do
 
 * Determine why `list albums` isn't always first tile
+* prevent duplicate requests
+* lint the code for each app
+* write tests for each app
+* investigate mutation for initTradesView() data retrieval 

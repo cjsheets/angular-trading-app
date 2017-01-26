@@ -1,4 +1,4 @@
-import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { Subscription }   from 'rxjs/Subscription';
 import { AuthService } from '../navbar/auth.service';
 import { RecordCollection, TraderCollection } from "../../../../shared/collections/trading.collection";
@@ -23,7 +23,7 @@ import style from "./records.view.scss";
   template,
   styles: [ style ]
 })
-export class RecordsComponent implements OnInit { 
+export class RecordsComponent implements OnInit, OnDestroy { 
   records: Observable<any[]>;
   traders: Observable<any[]>;
   private bricks: Array<{}> = [];
@@ -75,6 +75,7 @@ export class RecordsComponent implements OnInit {
       //console.log(pin)
       this.bricks.push(pin)
     });
+    console.log(this.bricks)
   }
 
   initSearchView(){
@@ -103,25 +104,48 @@ export class RecordsComponent implements OnInit {
   }
 
   requestTrade(){
-    this.traders = TraderCollection.find({}).zone();
-    this.traders.subscribe(trades => {
-      console.log('Trades');
-      console.dir(JSON.stringify(trades))
-    });
-    console.log('requesting trade')
-    let trade: Traders = {
-      id: 'sdlfigj',
-      requests: [{
-        record_id: 'this',
-        loan_status: false
-      }]
+    let uid = this._auth.getUID(),
+      record = RecordCollection.findOne({_id: this.recordID}),
+      requestor: any = TraderCollection.findOne({id: uid}),
+      owner: any = TraderCollection.findOne({id: record.owner}),
+      tradeRequest = { 
+        record_id: this.recordID, loan_status: false
+      }
+    if(requestor){
+      requestor.requests.push(tradeRequest);
+      TraderCollection.update(requestor._id,
+        {$set: 
+          { requests: requestor.requests }
+        });
+    } else {
+      let trade: Traders = {
+        id: uid,
+        requests: [tradeRequest]
+      }
+      TraderCollection.insert(trade);
     }
-    TraderCollection.insert(trade);
+    if(owner){
+      owner.requests.push(tradeRequest);
+      TraderCollection.update(owner._id,
+        {$set: 
+          { offers: owner.requests }
+        });
+    } else {
+      let trade: Traders = {
+        id: record.owner,
+        offers: [tradeRequest]
+      }
+      TraderCollection.insert(trade);
+    }
     this.router.navigate(['/at/records']);
   }
 
   removeRecord(){
 
+  }
+  
+  ngOnDestroy() {
+    for(let sub of this.subs) sub.unsubscribe();
   }
 
 }
