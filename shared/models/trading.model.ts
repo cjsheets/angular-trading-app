@@ -14,6 +14,6 @@ export interface Traders {
 }
 
 export interface Transaction {
-  book_id       : string;
+  record_id       : string;
   loan_status   : boolean;
 }

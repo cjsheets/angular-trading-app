@@ -2,13 +2,14 @@ import { Component, Directive, Input, OnInit, ViewChild } from '@angular/core';
 import { Subscription }   from 'rxjs/Subscription';
 import { AuthService } from '../navbar/auth.service';
 import { RecordCollection, TraderCollection } from "../../../../shared/collections/trading.collection";
+import {Records, Traders} from "../../../../shared/models/trading.model";
 
 // import {NgbTooltip} from '@ng-bootstrap/ng-bootstrap';
 
 import { ApiService } from '../shared/api.service';
 import { LastFM } from "../shared/interface/last-fm.interface";
 import { Logger } from '../shared/logger.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 // import {NgbModal, ModalDismissReasons, NgbActiveModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
@@ -24,16 +25,24 @@ import style from "./records.view.scss";
 })
 export class RecordsComponent implements OnInit { 
   records: Observable<any[]>;
+  traders: Observable<any[]>;
   private bricks: Array<{}> = [];
   private subs: Subscription[] = [];
   private currentRoute: string;
+  private recordID: string;
 
   constructor(
     private _api: ApiService,
     private _log: Logger,
     private _auth: AuthService,
     private route: ActivatedRoute,
-  ) { }
+    private router: Router
+  ) {
+    this.subs[this.subs.length] = route.params.subscribe(params => { 
+        if(params.hasOwnProperty('rid'))
+          this.recordID = atob(params['rid']);
+    });
+  }
 
   public model;
 
@@ -44,17 +53,26 @@ export class RecordsComponent implements OnInit {
       switch(this.currentRoute){
         case 'records': this.initRecordsView(); break;
         case 'search': this.initSearchView(); break;
-      }
+        default:
+          this.currentRoute = url.pop().path;
+          switch(this.currentRoute){
+            case 'request': this.requestTrade(); break;
+            case 'remove': this.removeRecord(); break;
+          };
+      };
     });
   }
 
   initRecordsView(){
     this.records = RecordCollection.find({}).zone();
     this.bricks = [];
+    let uid = this._auth.getUID();
     this.bricks.push({image: '/img/record.png', first: true})
     this.records.subscribe(pins => {
       let pin = pins[pins.length - 1];
       pin.rid = btoa(pin._id);
+      pin.mine = (pin.owner == uid) ? true : false;
+      //console.log(pin)
       this.bricks.push(pin)
     });
   }
@@ -80,8 +98,30 @@ export class RecordsComponent implements OnInit {
             })
           }
         })
-        console.log(albums)
+        //console.log(albums)
       });
+  }
+
+  requestTrade(){
+    this.traders = TraderCollection.find({}).zone();
+    this.traders.subscribe(trades => {
+      console.log('Trades');
+      console.dir(JSON.stringify(trades))
+    });
+    console.log('requesting trade')
+    let trade: Traders = {
+      id: 'sdlfigj',
+      requests: [{
+        record_id: 'this',
+        loan_status: false
+      }]
+    }
+    TraderCollection.insert(trade);
+    this.router.navigate(['/at/records']);
+  }
+
+  removeRecord(){
+
   }
 
 }
