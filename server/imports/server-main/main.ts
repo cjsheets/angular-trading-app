@@ -3,6 +3,8 @@ import {DemoCollection} from "../../../shared/collections/demo.collection";
 import {Demo} from "../../../shared/models/demo.model";
 import { loadRecords, loadTraders } from "../fixtures/trading.fixture";
 
+import '../../../shared/methods/trading.methods';
+
 declare let WebApp: any;
 declare let require: any;
 
@@ -53,4 +55,5 @@ export class Main {
       });
     }
   }
+
 }

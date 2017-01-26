@@ -87,3 +87,4 @@ The `DemoComponent` contains example for Angular 2 tests for Component, and in t
 * lint the code for each app
 * write tests for each app
 * investigate mutation for initTradesView() data retrieval 
+* remove redundant code in trades using templates 

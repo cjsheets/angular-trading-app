@@ -1,4 +1,5 @@
 export interface Records {
+  _id      ?: string;
   id        : string;
   owner     : string;
   name      : string;
@@ -8,12 +9,15 @@ export interface Records {
 }
 
 export interface Traders {
+  _id      ?: string;
   id        : string;
   requests ?: Transaction[];
   offers   ?: Transaction[];
 }
 
 export interface Transaction {
-  record_id       : string;
+  requestor_id  : string,
+  owner_id      : string,
+  record_id     : string;
   loan_status   : boolean;
 }

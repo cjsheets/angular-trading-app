@@ -109,7 +109,10 @@ export class RecordsComponent implements OnInit, OnDestroy {
       requestor: any = TraderCollection.findOne({id: uid}),
       owner: any = TraderCollection.findOne({id: record.owner}),
       tradeRequest = { 
-        record_id: this.recordID, loan_status: false
+        requestor_id: uid,
+        owner_id: record.owner,
+        record_id: this.recordID,
+        loan_status: false
       }
     if(requestor){
       requestor.requests.push(tradeRequest);
@@ -141,7 +144,7 @@ export class RecordsComponent implements OnInit, OnDestroy {
   }
 
   removeRecord(){
-
+    
   }
   
   ngOnDestroy() {

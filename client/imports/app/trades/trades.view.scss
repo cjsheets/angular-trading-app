@@ -60,12 +60,6 @@
 .brick-body div {
     display: flex
 }
-.brick-button {
-  margin: auto;
-  justify-content: center;
-  flex-grow: 1;
-  padding: 10px 0px;
-}
 .brick-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,7 +69,6 @@
   align-items: center;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  padding: 6px 0px 4px;
   background: #DDDDDD;
   color: #333333;
   border-bottom-left-radius: 0.3rem;
@@ -94,4 +87,57 @@
 }
 .redheart {
   color: #d40000;
+}
+
+.brick-button {
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1rem;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  padding: .5rem 1rem;
+}
+.brick-button-success {
+  width: 50%;
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+    border-bottom-left-radius: 0.25rem;
+    cursor: pointer;
+}
+.brick-button-danger {
+  width: 50%;
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d9534f;
+    border-bottom-right-radius: 0.25rem;
+    cursor: pointer;
+}
+.brick-button-success:hover {
+    background-color: #449d44;
+    border-color: #419641;
+}
+.brick-button-danger:hover {
+    background-color: #c9302c;
+    border-color: #c12e2a;
+}
+.brick-button-info {
+  width: 100%;
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #5bc0de;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    cursor: pointer;
+}
+.brick-button-info:hover {
+    background-color: #31b0d5;
+    border-color: #2aabd2;
 }
