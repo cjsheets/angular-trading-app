@@ -6,6 +6,7 @@ import { RecordCollection, TraderCollection } from "../../../../shared/collectio
 // import {NgbTooltip} from '@ng-bootstrap/ng-bootstrap';
 
 import { ApiService } from '../shared/api.service';
+import { LastFM } from "../shared/interface/last-fm.interface";
 import { Logger } from '../shared/logger.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -63,9 +64,22 @@ export class RecordsComponent implements OnInit {
   }
 
   search(value){
-    this._api.getAlbums$(value.artist)
-      .subscribe(albums => {
+    this._api.queryAPI$(value.artist)
+      .subscribe((albums : LastFM) => {
         this.bricks = [];
+        let uid = this._auth.getUID();
+        albums.topalbums.album.forEach(album =>{
+          if(album.image[2]['#text'] != ''){
+            this.bricks.push({
+              id: album.url,
+              owner: uid,
+              name: album.name,
+              artist: album.artist.name,
+              image: album.image[2]['#text'],
+              available: true
+            })
+          }
+        })
         console.log(albums)
       });
   }

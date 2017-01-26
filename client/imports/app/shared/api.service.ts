@@ -24,13 +24,22 @@ export class ApiService {
     @Inject('api-url') private _api: string
   ){}
 
-  public getAlbums$(artist: string): Observable<Response> {
-    this._log['log']('api::getAlbums$(): ', artist);
+  // public getAlbums$(artist) {
+  //   this._log['log']('api::getAlbums$(): ', artist);
+  //   this.queryAPI$(artist).subscribe(res => {=
+  //     this.searchResult$.next(res);
+  //   }, err => this.handleError(err));
+  // }
+
+  public queryAPI$(artist) : Observable<LastFM> {
+    this._log['log']('api::queryAPI$(): ', artist);
     let userID = '&u=' + this._auth.getUID();
     return this._http
       .get(this.apiBase + artist + userID,)
       .map((res: Response) => res.json())
-      .catch(this.handleError);
+      .catch((err:Response) => {
+        return Observable.throw({detail:err.json(),status: err.status});
+      });
   }
 
   private handleError(err: Response) : Observable<Response> {

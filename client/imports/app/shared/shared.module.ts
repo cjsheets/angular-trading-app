@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MasonryModule } from 'angular2-masonry';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { ApiService } from './api.service';
 import { Logger, ConsoleLogService } from './logger.service';
@@ -14,13 +15,15 @@ import { Meteor } from 'meteor/meteor';
   imports: [
     CommonModule,
     HttpModule,
-    MasonryModule
+    MasonryModule,
+    NgbModule.forRoot(),
   ],
   exports : [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MasonryModule
+    MasonryModule,
+    NgbModule
   ],
   providers: [
     ApiService,

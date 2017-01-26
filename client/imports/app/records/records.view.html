@@ -1,6 +1,28 @@
 
 <div class="container-fluid">
-  <div class="row" *ngIf="currentRoute == 'records'">
+
+  <div class="row" *ngIf="currentRoute == 'search'">
+    <div class="col-sm">
+      <h2>List A Record</h2>
+      <form class="form-inline" #form="ngForm" (submit)="search(form.value)">
+        <label class="col-form-label col-form-label-sm" 
+          for="inlineFormInputGroup">Search by</label>
+        <div class="input-group">
+          <input type="text" class="form-control form-control-sm" name="artist"  ngModel
+            id="inlineFormInputGroup" placeholder="Artist">
+          <div class="input-group-addon" (click)="search(form.value)">Search</div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row" *ngIf="currentRoute == 'search'">
+    <div class="col-sm">
+      results
+    </div>
+  </div>
+</div>
+
+  <div class="row" *ngIf="currentRoute == 'records' || currentRoute == 'search'">
     <div class="col-sm" *ngIf="bricks.length > 0">
       <masonry [options]="{transitionDuration: '0.0000001s', stamp: '.stamp',
         columnWidth: '.brick-container', fitWidth: true}"
@@ -11,15 +33,18 @@
               <img class="pin" [src]="brick.image" style="width: 175px;">
               <span class="overlay">
               </span>
+              <template #tipContent>Listen on<br>Last.fm</template>
               <span class="overlay-trade">
                 <div class="overlay-controls">
                   <span class="ot-left">
                     <a href="{{brick.id}}">
-                      <i class="zmdi zmdi-lastfm"></i>
+                      <i class="zmdi zmdi-lastfm"  placement="top"
+                      [ngbTooltip]="tipContent"></i>
                     </a>
                   </span>
                   <span class="ot-right">
-                    <i class="zmdi zmdi-swap"
+                    <i class="zmdi zmdi-swap"  placement="top"
+                      ngbTooltip="Request a Trade"
                       [routerLink]="['/at/request/' + brick.rid]" ></i>
                   </span>
                 </div>
@@ -56,25 +81,3 @@
       <br><br>
     </div>
   </div>
-
-
-  <div class="row" *ngIf="currentRoute == 'search'">
-    <div class="col-sm">
-      <h2>List A Record</h2>
-      <form class="form-inline" #form="ngForm" (submit)="search(form.value)">
-        <label class="col-form-label col-form-label-sm" 
-          for="inlineFormInputGroup">Search by</label>
-        <div class="input-group">
-          <input type="text" class="form-control form-control-sm" name="artist"  ngModel
-            id="inlineFormInputGroup" placeholder="Artist">
-          <div class="input-group-addon" (click)="search(form.value)">Search</div>
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="row" *ngIf="currentRoute == 'search'">
-    <div class="col-sm">
-      results
-    </div>
-  </div>
-</div>
