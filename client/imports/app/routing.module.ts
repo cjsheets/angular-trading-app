@@ -17,7 +17,7 @@ export const routedComponents = [
 const routes: Routes = [
   { path: 'at/demo', component: DemoComponent },
   { path: 'at/records', component: RecordsComponent },
-  { path: 'at/records/find', component: RecordsComponent },
+  { path: 'at/search', component: RecordsComponent },
   { path: 'at/request/:id', component: RecordsComponent },
   { path: 'at/my-listings', component: RecordsComponent },
   { path: 'at/trades', component: TradesComponent },

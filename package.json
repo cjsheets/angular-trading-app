@@ -37,12 +37,15 @@
     "bcrypt": "^1.0.2",
     "bootstrap": "https://github.com/twbs/bootstrap/tarball/v4.0.0-alpha.6",
     "imagesloaded": "^4.1.1",
+    "lodash": "^4.17.4",
     "masonry-layout": "^4.1.1",
     "meteor-rxjs": "^0.4.7",
     "package": "^1.0.1",
     "raven-js": "^3.9.2",
     "reflect-metadata": "^0.1.9",
+    "request": "^2.79.0",
     "rxjs": "^5.0.3",
+    "url": "^0.11.0",
     "zone.js": "^0.7.6"
   }
 }

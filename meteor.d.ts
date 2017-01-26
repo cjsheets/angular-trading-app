@@ -59,6 +59,7 @@ declare module "meteor/meteor" {
     interface LiveQueryHandle {
       stop(): void;
     }
+    var settings: any;
   }
 }
 

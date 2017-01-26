@@ -23,6 +23,8 @@ import style from "./records.view.scss";
 export class RecordsComponent implements OnInit { 
   records: Observable<any[]>;
   private bricks: Array<{}> = [];
+  private subs: Subscription[] = [];
+  private currentRoute: string;
 
   constructor(
     private _log: Logger,
@@ -34,6 +36,16 @@ export class RecordsComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.subs[this.subs.length] = this.route.url.subscribe(url => {
+      this.currentRoute = url.pop().path;
+      switch(this.currentRoute){
+        case 'records': this.initRecordsView(); break;
+        case 'search': this.initSearchView(); break;
+      }
+    });
+  }
+
+  initRecordsView(){
     this.records = RecordCollection.find({}).zone();
     this.bricks = [];
     this.bricks.push({image: '/img/record.png', first: true})
@@ -41,12 +53,15 @@ export class RecordsComponent implements OnInit {
       let pin = pins[pins.length - 1];
       pin.rid = btoa(pin._id);
       this.bricks.push(pin)
-      // pins added to pin on each itteration for some reason
-      // pins.forEach(pin => {
-      //     pin.rid = btoa(pin._id);
-      //    this.bricks.push(pin)
-      // });
     });
+  }
+
+  initSearchView(){
+
+  }
+
+  search(){
+    
   }
 
 }
