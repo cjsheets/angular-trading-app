@@ -22,61 +22,72 @@
   </div>
 </div>
 
+<div class="container-fluid">
   <div class="row" *ngIf="currentRoute == 'records' || currentRoute == 'search'">
     <div class="col-sm" *ngIf="bricks.length > 0">
+      <h4 class="page-title">Availalble Records</h4>
+
       <masonry [options]="{transitionDuration: '0.0000001s', stamp: '.stamp',
         columnWidth: '.brick-container', fitWidth: true}"
         [useImagesLoaded]="true" class="brick-parent">
-        <masonry-brick class="brick" *ngFor="let brick of bricks"
-          class="brick-container brick" [class.stamp]="brick.first">
-            <div class="brick-body" *ngIf="!brick.first">
-              <img class="pin" [src]="brick.image" style="width: 175px;">
-              <span class="overlay">
-              </span>
-              <template #tipContent>Listen on<br>Last.fm</template>
-              <span class="overlay-trade">
-                <div class="overlay-controls">
-                  <span class="ot-left">
-                    <a href="{{brick.url}}">
-                      <i class="zmdi zmdi-lastfm"  placement="top"
-                      [ngbTooltip]="tipContent"></i>
+        <span *ngFor="let brick of bricks; let i = index">
+          <span *ngIf="i == 1">
+            <masonry-brick class="brick" class="brick-container brick stamp">
+              <div class="brick-body">
+                <img class="pin" src="/img/record.png" style="width: 175px;">
+                <span class="overlay-first">
+                  <p class="ot-left2-first">
+                    <a [routerLink]="['/at/search']">
+                      <i class="zmdi zmdi-album"></i> List an Album
                     </a>
-                  </span>
-                  <span class="ot-right" *ngIf="brick.owner != uid">
-                    <i class="zmdi zmdi-swap"  placement="top"
-                      ngbTooltip="Request a Trade" (click)="requestTrade(brick)" ></i>
-                  </span>
-                  <span class="ot-right" *ngIf="brick.owner == uid">
-                    <i class="zmdi zmdi-close"  placement="top"
-                      ngbTooltip="Unlist" (click)="removeRecord(brick)"></i>
-                  </span>
-                </div>
-              </span>
-            </div>
-            <div class="brick-body" *ngIf="brick.first">
-              <img class="pin" [src]="brick.image" style="width: 175px;">
-              <span class="overlay-first">
-                <p class="ot-left2-first">
-                  <a [routerLink]="['/at/search']">
-                    <i class="zmdi zmdi-album"></i> List an Album
-                  </a>
-                </p>
-                <p class="ot-left1-first">
-                  <a [routerLink]="['/at/my-listings']">
-                    <i class="zmdi zmdi-edit"></i> Manage Listings
-                  </a>
-                </p>
-              </span>
-            </div>
-            <div class="brick-footer" *ngIf="!brick.first" [class.green-footer]="brick.owner == uid">
-            <p> <b>{{brick.artist}}:</b> {{brick.name}}</p>
-            </div>
-            <div class="brick-footer" *ngIf="brick.first" >
-              <b style="margin: auto">List albums for trade!</b>
-            </div>
-          </masonry-brick>
+                  </p>
+                  <p class="ot-left1-first">
+                    <a [routerLink]="['/at/my-listings']">
+                      <i class="zmdi zmdi-edit"></i> Manage Listings
+                    </a>
+                  </p>
+                </span>
+              </div>
+              <div class="brick-footer">
+                <b style="margin: auto">List albums for trade!</b>
+              </div>
+            </masonry-brick>
+          </span>
+          <span *ngIf="brick.owner != _auth.getUID()">
+            <masonry-brick class="brick" class="brick-container brick">
+              <div class="brick-body">
+                <img class="pin" [src]="brick.image" style="width: 175px;">
+                <span class="overlay">
+                </span>
+                <template #tipContent>Listen on<br>Last.fm</template>
+                <span class="overlay-trade">
+                  <div class="overlay-controls">
+                    <span class="ot-left">
+                      <a href="{{brick.url}}">
+                        <i class="zmdi zmdi-lastfm"  placement="top"
+                        [ngbTooltip]="tipContent"></i>
+                      </a>
+                    </span>
+                    <span class="ot-right" *ngIf="brick.owner != uid">
+                      <i class="zmdi zmdi-swap"  placement="top"
+                        ngbTooltip="Request a Trade" (click)="requestTrade(brick)" ></i>
+                    </span>
+                    <span class="ot-right" *ngIf="brick.owner == uid">
+                      <i class="zmdi zmdi-close"  placement="top"
+                        ngbTooltip="Unlist" (click)="removeRecord(brick)"></i>
+                    </span>
+                  </div>
+                </span>
+              </div>
+              <div class="brick-footer" [class.green-footer]="brick.owner == uid">
+                <p><b>{{brick.artist}}:</b> {{brick.name}}</p>
+              </div>
+            </masonry-brick>
+          </span>
+        </span>
       </masonry>
       <div style="clear: both"></div>
+
     </div>
     <div class="col-sm text-center" *ngIf="bricks.length === 0">
       <br><br>
@@ -84,3 +95,56 @@
       <br><br>
     </div>
   </div>
+
+  <div class="row" *ngIf="currentRoute == 'records'">
+    <div class="col-sm" *ngIf="bricks.length > 0">
+      <br><br>
+      <h4 class="page-title">Your Listed Records</h4>
+
+      <masonry [options]="{transitionDuration: '0.0000001s', stamp: '.stamp',
+        columnWidth: '.brick-container', fitWidth: true}"
+        [useImagesLoaded]="true" class="brick-parent">
+        <span *ngFor="let brick of bricks; let i = index">
+          <span *ngIf="brick.owner == _auth.getUID()">
+            <masonry-brick class="brick" class="brick-container brick">
+              <div class="brick-body">
+                <img class="pin" [src]="brick.image" style="width: 175px;">
+                <span class="overlay">
+                </span>
+                <template #tipContent>Listen on<br>Last.fm</template>
+                <span class="overlay-trade">
+                  <div class="overlay-controls">
+                    <span class="ot-left">
+                      <a href="{{brick.url}}">
+                        <i class="zmdi zmdi-lastfm"  placement="top"
+                        [ngbTooltip]="tipContent"></i>
+                      </a>
+                    </span>
+                    <span class="ot-right" *ngIf="brick.owner != uid">
+                      <i class="zmdi zmdi-swap"  placement="top"
+                        ngbTooltip="Request a Trade" (click)="requestTrade(brick)" ></i>
+                    </span>
+                    <span class="ot-right" *ngIf="brick.owner == uid">
+                      <i class="zmdi zmdi-close"  placement="top"
+                        ngbTooltip="Unlist" (click)="removeRecord(brick)"></i>
+                    </span>
+                  </div>
+                </span>
+              </div>
+              <div class="brick-footer" [class.green-footer]="brick.owner == uid">
+                <p><b>{{brick.artist}}:</b> {{brick.name}}</p>
+              </div>
+            </masonry-brick>
+          </span>
+        </span>
+      </masonry>
+      <div style="clear: both"></div>
+      
+    </div>
+    <div class="col-sm text-center" *ngIf="bricks.length === 0">
+      <br><br>
+      <p>Create a <a [routerLink]="['/at']">Add Records</a> to get started!</p>
+      <br><br>
+    </div>
+  </div>
+</div>

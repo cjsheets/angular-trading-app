@@ -10,14 +10,25 @@
   <a class="navbar-brand navbar-left" href="" [routerLink]="['/at']">
     <span style="font-size: 1.6rem; vertical-align: middle;">
       <!--<i class="zmdi zmdi-refresh-sync"></i>-->
-      <i class="zmdi zmdi-album"></i>
+      <i class="zmdi zmdi-shuffle"></i>
     </span> Angular Trading
   </a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
   <div class="navbar-nav mr-auto">
   </div>
   <ul class="nav navbar-nav navbar-right">
-    <login-buttons></login-buttons>
+    <li class="header-pad-right" [routerLink]="['/at/records']">
+      <i class="zmdi zmdi-audio"></i>
+    </li>
+    <li class="header-pad-right" [routerLink]="['/at/search']"
+     *ngIf="_auth.getAuthState()">
+      <i class="zmdi zmdi-plus-square"></i>
+    </li>
+    <li class="header-pad-right" [routerLink]="['/at/trades']"
+     *ngIf="_auth.getAuthState()">
+      <i class="zmdi zmdi-notifications-none"></i>
+    </li>
+    <li style="padding-top: 5px"><login-buttons></login-buttons></li>
     <!--<login-modal></login-modal>-->
   </ul>
   </div>
@@ -25,7 +36,7 @@
 <!--
  !|  Debugging bar with app state outputs and navigation
  !-->
-<div class="container-fluid debug-container">
+<!--<div class="container-fluid debug-container">
   <div class="row">
     <div class="col-sm">
       <b style="color: seagreen">[ Debug ]</b>
@@ -48,11 +59,10 @@
       
 
       &nbsp; &nbsp; - &nbsp; &nbsp;
-      <!--<b>UID:</b> {{(_auth.af.auth | async)?.uid}}-->
       <b style="color: seagreen">[ / Debug ]</b>
     </div>
   </div>
-</div>
+</div>-->
 <!--
  !|  End of Debug
  !-->

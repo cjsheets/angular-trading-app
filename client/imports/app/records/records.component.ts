@@ -33,7 +33,7 @@ export class RecordsComponent implements OnInit, OnDestroy {
   private currentRoute: string;
   private recordID: string;
     public records$: ReplaySubject<{}> = new ReplaySubject(1);
-
+  private initialBrick = true;
   constructor(
     private _api: ApiService,
     private _log: Logger,
@@ -56,9 +56,7 @@ export class RecordsComponent implements OnInit, OnDestroy {
     this.records$.subscribe((records: any) =>{
       this.bricks = [];
       //console.log('Records: ', records)
-      records.forEach(record =>{
-        this.bricks.push(record);
-      })
+      records.forEach(record => this.bricks.push(record))
     })
     this.subs[this.subs.length] = this.route.url.subscribe(url => {
       this.currentRoute = url.pop().path;
@@ -70,7 +68,6 @@ export class RecordsComponent implements OnInit, OnDestroy {
   }
 
   initRecordsView(){
-    this.records$.next([{image: '/img/record.png', first: true}]);
     let recordCollection = RecordCollection.find({}).zone();
     recordCollection.subscribe(records => this.records$.next(records));
   }
