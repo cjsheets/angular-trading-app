@@ -1,0 +1,21 @@
+{
+  "public": {
+    "last_fm": {
+      "key" : "process.env.LAST_FM_KEY"
+    },
+    "api_url": "https://angular-trading.herokuapp.com/api/proxy?"
+  },
+  "mongo": {
+    "user"  : "process.env.MONGO_USER",
+    "pass"  : "process.env.MONGO_PASS",
+    "host"  : "process.env.MONGO_HOST",
+    "port"  : "process.env.MONGO_PORT",
+    "db"    : "process.env.MONGO_APP_ID"
+  },
+  "raven": {
+    "key"     : "process.env.RAVEN_KEY",
+    "secret"  : "process.env.RAVEN_SECRET",
+    "host"    : "sentry.io",
+    "app_id"  : "process.env.RAVEN_APP_ID"
+  }
+}
