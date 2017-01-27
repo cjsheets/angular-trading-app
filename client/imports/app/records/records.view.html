@@ -42,14 +42,13 @@
                       [ngbTooltip]="tipContent"></i>
                     </a>
                   </span>
-                  <span class="ot-right" *ngIf="!brick.mine">
+                  <span class="ot-right" *ngIf="brick.owner != uid">
                     <i class="zmdi zmdi-swap"  placement="top"
                       ngbTooltip="Request a Trade" (click)="requestTrade(brick)" ></i>
                   </span>
-                  <span class="ot-right" *ngIf="brick.mine">
+                  <span class="ot-right" *ngIf="brick.owner == uid">
                     <i class="zmdi zmdi-close"  placement="top"
-                      ngbTooltip="Unlist"
-                      [routerLink]="['/at/remove/' + brick.rid]" ></i>
+                      ngbTooltip="Unlist" (click)="removeRecord(brick)"></i>
                   </span>
                 </div>
               </span>
@@ -69,7 +68,7 @@
                 </p>
               </span>
             </div>
-            <div class="brick-footer" *ngIf="!brick.first" [class.green-footer]="brick.mine">
+            <div class="brick-footer" *ngIf="!brick.first" [class.green-footer]="brick.owner == uid">
             <p> <b>{{brick.artist}}:</b> {{brick.name}}</p>
             </div>
             <div class="brick-footer" *ngIf="brick.first" >

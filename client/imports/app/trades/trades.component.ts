@@ -86,6 +86,21 @@ private bricks = []
       });
   }
 
+  declineTrade(offer){
+    console.log('setting trader collection')
+    MeteorObservable.call('declineTrade', offer.owner_id, 
+      offer.requestor_id, offer.record_id)
+      .subscribe(() => {
+        console.log('User successfully invited.');
+      }, (error) => {
+        console.log(`Failed to invite due to ${error}`);
+      });
+  }
+
+  cancelTrade(request){
+    this.declineTrade(request);
+  }
+
   returnRecord(request){
     console.log('setting trader collection')
     MeteorObservable.call('returnRecord', request.owner_id, 

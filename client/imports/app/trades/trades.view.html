@@ -12,7 +12,8 @@
                 <img class="pin" [src]="brick.record.image">
               </div>
               <div class="brick-footer">
-                <div class="brick-button brick-button-info">
+                <div class="brick-button brick-button-info"
+                 (click)="cancelTrade(brick.request)">
                   Cancel Request
                 </div>
               </div>
@@ -79,7 +80,7 @@
           </span>
         </span>
       </masonry>
-      
+
     </div>
   </div>
 </div>

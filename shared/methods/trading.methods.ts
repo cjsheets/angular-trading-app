@@ -5,10 +5,48 @@ import { Meteor } from 'meteor/meteor';
 // See: https://angular-meteor.com/tutorials/socially/angular2/meteor-methods
 Meteor.methods({
 
+  removeRecord: function (record_id) {
+    if (Meteor.isServer) {
+      // Client side code doesn't allow positional operator ($)
+      console.log('removeRecord() - starting')
+      let uid = Meteor.userId()
+
+      let recordIsMine = RecordCollection.findOne({"$and": [
+          { "_id": record_id },
+          { "owner": uid }
+        ]});
+      if(!recordIsMine)
+        throw new Meteor.Error('400', 'The record doesn\'t exist or isn\'t owned by you');
+
+      let recordIsAvailble = RecordCollection.findOne({"$and": [
+          { "_id": record_id },
+          { "owner": uid },
+          { "available": true }
+        ]});
+      if(!recordIsAvailble)
+        throw new Meteor.Error('400', 'The record is currently on loan');
+
+      // Clear any requests involving this record
+      TraderCollection.update({},
+        {"$pull": { "offers": {
+          "owner_id": uid,
+          "record_id": record_id
+        } } }, {multi: true}
+      );
+      TraderCollection.update({},
+        {"$pull": { "requests": {
+          "owner_id": uid,
+          "record_id": record_id
+        } } }, {multi: true}
+      );
+      // Remove the record
+      RecordCollection.remove({ "_id": record_id });
+    }
+  },
+
   requestTrade: function (owner_id, requestor_id, record_id) {
     if (Meteor.isServer) {
       // Client side code doesn't allow positional operator ($)
-      console.log('requestTrade() - starting')
 
       let requestor = TraderCollection.findOne({ "id": requestor_id });
       if(!requestor) // Ensure requestor and owner are initialized
@@ -24,7 +62,6 @@ Meteor.methods({
         ]});
       if(trade)
         throw new Meteor.Error('400', 'The trade was already requested');
-        console.log(record_id)
       let record = RecordCollection.findOne({"$and": [
           { "_id": record_id },
           { "available": true }
@@ -50,13 +87,11 @@ Meteor.methods({
             loan_status: false
         } } }
       );
-      console.log('requestTrade() - done')
     }
   },
 
   acceptTrade: function (owner_id, requestor_id, record_id) {
     if (Meteor.isServer) {
-      // Client side code doesn't allow positional operator ($)
       TraderCollection.update({ "id": owner_id, "offers": {
         "$elemMatch": {
           "requestor_id": requestor_id,
@@ -77,13 +112,30 @@ Meteor.methods({
         { "_id": record_id },
         {"$set": { "available": false } }
       );
-      console.log('done')
+    }
+  },
+
+  declineTrade: function (owner_id, requestor_id, record_id) {
+    if (Meteor.isServer) {
+      TraderCollection.update({ "id": owner_id },
+        {"$pull": { "offers": {
+          "requestor_id": requestor_id,
+          "record_id": record_id,
+          "loan_status": false
+        } } }
+      );
+      TraderCollection.update({ "id": requestor_id },
+        {"$pull": { "requests": {
+          "owner_id": owner_id,
+          "record_id": record_id,
+          "loan_status": false
+        } } }
+      );
     }
   },
 
   returnRecord: function (owner_id, requestor_id, record_id) {
     if (Meteor.isServer) {
-      // Client side code doesn't allow positional operator ($)
       TraderCollection.update({ "id": owner_id },
         {"$pull": { "offers": {
           "requestor_id": requestor_id,
@@ -102,7 +154,6 @@ Meteor.methods({
         { "_id": record_id },
         {"$set": { "available": true } }
       );
-      console.log('done')
     }
   }
 
