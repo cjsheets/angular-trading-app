@@ -3,21 +3,16 @@
 
   <div class="row" *ngIf="currentRoute == 'search'">
     <div class="col-sm">
-      <h2>List A Record</h2>
+      <h4 class="page-title">List Your Records</h4>
       <form class="form-inline" #form="ngForm" (submit)="search(form.value)">
         <label class="col-form-label col-form-label-sm" 
-          for="inlineFormInputGroup">Search by</label>
+          for="inlineFormInputGroup">&nbsp; &nbsp; Find your record by: &nbsp;</label>
         <div class="input-group">
           <input type="text" class="form-control form-control-sm" name="artist"  ngModel
             id="inlineFormInputGroup" placeholder="Artist">
           <div class="input-group-addon" (click)="search(form.value)">Search</div>
         </div>
       </form>
-    </div>
-  </div>
-  <div class="row" *ngIf="currentRoute == 'search'">
-    <div class="col-sm">
-      results
     </div>
   </div>
 </div>
@@ -31,7 +26,7 @@
         columnWidth: '.brick-container', fitWidth: true}"
         [useImagesLoaded]="true" class="brick-parent">
         <span *ngFor="let brick of bricks; let i = index">
-          <span *ngIf="i == 1">
+          <span *ngIf="i == 1 && currentRoute != 'search'">
             <masonry-brick class="brick" class="brick-container brick stamp">
               <div class="brick-body">
                 <img class="pin" src="/img/record.png" style="width: 175px;">
@@ -53,7 +48,7 @@
               </div>
             </masonry-brick>
           </span>
-          <span *ngIf="brick.owner != _auth.getUID()">
+          <span *ngIf="brick.owner != _auth.getUID() || currentRoute == 'search'">
             <masonry-brick class="brick" class="brick-container brick">
               <div class="brick-body">
                 <img class="pin" [src]="brick.image" style="width: 175px;">
@@ -63,23 +58,29 @@
                 <span class="overlay-trade">
                   <div class="overlay-controls">
                     <span class="ot-left">
-                      <a href="{{brick.url}}">
-                        <i class="zmdi zmdi-lastfm"  placement="top"
-                        [ngbTooltip]="tipContent"></i>
+                      <a href="{{brick.url}}" *ngIf="currentRoute != 'search'">
+                        <i class="zmdi zmdi-lastfm"  placement="top" [ngbTooltip]="tipContent"></i>
+                      </a>
+                      <a href="{{brick.id}}" *ngIf="currentRoute == 'search'">
+                        <i class="zmdi zmdi-lastfm"  placement="top" [ngbTooltip]="tipContent"></i>
                       </a>
                     </span>
                     <span class="ot-right" *ngIf="brick.owner != uid">
                       <i class="zmdi zmdi-swap"  placement="top"
                         ngbTooltip="Request a Trade" (click)="requestTrade(brick)" ></i>
                     </span>
-                    <span class="ot-right" *ngIf="brick.owner == uid">
+                    <span class="ot-right" *ngIf="brick.owner == uid  && currentRoute != 'search'">
                       <i class="zmdi zmdi-close"  placement="top"
                         ngbTooltip="Unlist" (click)="removeRecord(brick)"></i>
+                    </span>
+                    <span class="ot-right" *ngIf="brick.owner == uid  && currentRoute == 'search'">
+                      <i class="zmdi zmdi-plus"  placement="top"
+                        ngbTooltip="List Record" (click)="addRecord(brick)"></i>
                     </span>
                   </div>
                 </span>
               </div>
-              <div class="brick-footer" [class.green-footer]="brick.owner == uid">
+              <div class="brick-footer" [class.green-footer]="brick.owner == uid  && currentRoute != 'search'">
                 <p><b>{{brick.artist}}:</b> {{brick.name}}</p>
               </div>
             </masonry-brick>
@@ -88,11 +89,6 @@
       </masonry>
       <div style="clear: both"></div>
 
-    </div>
-    <div class="col-sm text-center" *ngIf="bricks.length === 0">
-      <br><br>
-      <p>Create a <a [routerLink]="['/at']">Add Records</a> to get started!</p>
-      <br><br>
     </div>
   </div>
 
@@ -141,7 +137,7 @@
       <div style="clear: both"></div>
       
     </div>
-    <div class="col-sm text-center" *ngIf="bricks.length === 0">
+    <div class="col-sm text-center" *ngIf="bricks.length === 0 && currentRoute != 'search'">
       <br><br>
       <p>Create a <a [routerLink]="['/at']">Add Records</a> to get started!</p>
       <br><br>

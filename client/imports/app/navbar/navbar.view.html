@@ -18,15 +18,18 @@
   </div>
   <ul class="nav navbar-nav navbar-right">
     <li class="header-pad-right" [routerLink]="['/at/records']">
-      <i class="zmdi zmdi-audio"></i>
+      <i class="zmdi zmdi-audio"
+      placement="bottom" ngbTooltip="All Records"></i>
     </li>
     <li class="header-pad-right" [routerLink]="['/at/search']"
-     *ngIf="_auth.getAuthState()">
-      <i class="zmdi zmdi-plus-square"></i>
+      *ngIf="_auth.getAuthState()">
+      <i class="zmdi zmdi-plus-square" placement="bottom"
+      ngbTooltip="List a Record"></i>
     </li>
     <li class="header-pad-right" [routerLink]="['/at/trades']"
-     *ngIf="_auth.getAuthState()">
-      <i class="zmdi zmdi-notifications-none"></i>
+      *ngIf="_auth.getAuthState()">
+      <i class="zmdi zmdi-notifications-none" placement="bottom"
+      ngbTooltip="Trades"></i>
     </li>
     <li style="padding-top: 5px"><login-buttons></login-buttons></li>
     <!--<login-modal></login-modal>-->

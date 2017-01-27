@@ -1,15 +1,39 @@
 import { RecordCollection } from "../collections/trading.collection";
 import { TraderCollection } from "../collections/trading.collection";
+import { Records } from "../models/trading.model";
 import { Meteor } from 'meteor/meteor';
 
 // See: https://angular-meteor.com/tutorials/socially/angular2/meteor-methods
 Meteor.methods({
 
+  addRecord: function (record: Records) {
+    if (Meteor.isServer) {
+      // Client side code doesn't allow positional operator ($)
+      console.log('removeRecord() - starting')
+
+      let uid = Meteor.userId()
+      if(!uid)
+        throw new Meteor.Error('404', 'Must be logged');
+      
+      RecordCollection.insert({ 
+        id        : record.id,
+        owner     : uid,
+        name      : record.name,
+        artist    : record.artist,
+        image     : record.image,
+        available : true
+      });
+    }
+  },
+
   removeRecord: function (record_id) {
     if (Meteor.isServer) {
       // Client side code doesn't allow positional operator ($)
       console.log('removeRecord() - starting')
+
       let uid = Meteor.userId()
+      if(!uid)
+        throw new Meteor.Error('404', 'Must be logged');
 
       let recordIsMine = RecordCollection.findOne({"$and": [
           { "_id": record_id },
@@ -46,7 +70,10 @@ Meteor.methods({
 
   requestTrade: function (owner_id, requestor_id, record_id) {
     if (Meteor.isServer) {
-      // Client side code doesn't allow positional operator ($)
+
+      let uid = Meteor.userId()
+      if(!uid)
+        throw new Meteor.Error('404', 'Must be logged');
 
       let requestor = TraderCollection.findOne({ "id": requestor_id });
       if(!requestor) // Ensure requestor and owner are initialized
@@ -92,6 +119,11 @@ Meteor.methods({
 
   acceptTrade: function (owner_id, requestor_id, record_id) {
     if (Meteor.isServer) {
+
+      let uid = Meteor.userId()
+      if(!uid)
+        throw new Meteor.Error('404', 'Must be logged');
+
       TraderCollection.update({ "id": owner_id, "offers": {
         "$elemMatch": {
           "requestor_id": requestor_id,
@@ -117,6 +149,11 @@ Meteor.methods({
 
   declineTrade: function (owner_id, requestor_id, record_id) {
     if (Meteor.isServer) {
+
+      let uid = Meteor.userId()
+      if(!uid)
+        throw new Meteor.Error('404', 'Must be logged');
+
       TraderCollection.update({ "id": owner_id },
         {"$pull": { "offers": {
           "requestor_id": requestor_id,
@@ -136,6 +173,11 @@ Meteor.methods({
 
   returnRecord: function (owner_id, requestor_id, record_id) {
     if (Meteor.isServer) {
+
+      let uid = Meteor.userId()
+      if(!uid)
+        throw new Meteor.Error('404', 'Must be logged');
+
       TraderCollection.update({ "id": owner_id },
         {"$pull": { "offers": {
           "requestor_id": requestor_id,

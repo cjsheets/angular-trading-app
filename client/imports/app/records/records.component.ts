@@ -55,7 +55,7 @@ export class RecordsComponent implements OnInit, OnDestroy {
     this.uid = this._auth.getUID();
     this.records$.subscribe((records: any) =>{
       this.bricks = [];
-      //console.log('Records: ', records)
+      console.log('Records: ', records)
       records.forEach(record => this.bricks.push(record))
     })
     this.subs[this.subs.length] = this.route.url.subscribe(url => {
@@ -79,11 +79,13 @@ export class RecordsComponent implements OnInit, OnDestroy {
   search(value){
     this._api.queryAPI$(value.artist)
       .subscribe((albums : LastFM) => {
-        this.bricks = [];
-        let uid = this._auth.getUID();
+        let uid = this._auth.getUID(),
+          albumAry = [];
+          console.log('search-albums: ', albums)
         albums.topalbums.album.forEach(album =>{
+          console.log('search: ', album)
           if(album.image[2]['#text'] != ''){
-            this.bricks.push({
+            albumAry.push({
               id: album.url,
               owner: uid,
               name: album.name,
@@ -93,7 +95,7 @@ export class RecordsComponent implements OnInit, OnDestroy {
             })
           }
         })
-        //console.log(albums)
+        this.records$.next(albumAry);
       });
   }
 
@@ -108,9 +110,18 @@ export class RecordsComponent implements OnInit, OnDestroy {
       });
   }
 
+  addRecord(record){
+    console.log('addRecord', record)
+    MeteorObservable.call('addRecord', record)
+      .subscribe(() => {
+        console.log('record requested.');
+      }, (error) => {
+        console.log(`Failed to request due to ${error}`);
+      });
+  }
+
   removeRecord(record){
     console.log('removeRecord', record)
-    let uid = this._auth.getUID();
     MeteorObservable.call('removeRecord', record._id)
       .subscribe(() => {
         console.log('record requested.');
