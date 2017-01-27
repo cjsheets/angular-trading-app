@@ -15,6 +15,7 @@ import { Observable } from 'rxjs/Observable';
 // import {NgbModal, ModalDismissReasons, NgbActiveModal, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import template from "./records.view.html";
 import style from "./records.view.scss";
+import { MeteorObservable } from 'meteor-rxjs';
 
 
 
@@ -53,13 +54,7 @@ export class RecordsComponent implements OnInit, OnDestroy {
       switch(this.currentRoute){
         case 'records': this.initRecordsView(); break;
         case 'search': this.initSearchView(); break;
-        default:
-          this.currentRoute = url.pop().path;
-          switch(this.currentRoute){
-            case 'request': this.requestTrade(); break;
-            case 'remove': this.removeRecord(); break;
-          };
-      };
+       };
     });
   }
 
@@ -70,7 +65,7 @@ export class RecordsComponent implements OnInit, OnDestroy {
     this.bricks.push({image: '/img/record.png', first: true})
     this.records.subscribe(pins => {
       let pin = pins[pins.length - 1];
-      pin.rid = btoa(pin._id);
+      pin.rid = pin._id;
       pin.mine = (pin.owner == uid) ? true : false;
       //console.log(pin)
       this.bricks.push(pin)
@@ -103,44 +98,52 @@ export class RecordsComponent implements OnInit, OnDestroy {
       });
   }
 
-  requestTrade(){
-    let uid = this._auth.getUID(),
-      record = RecordCollection.findOne({_id: this.recordID}),
-      requestor: any = TraderCollection.findOne({id: uid}),
-      owner: any = TraderCollection.findOne({id: record.owner}),
-      tradeRequest = { 
-        requestor_id: uid,
-        owner_id: record.owner,
-        record_id: this.recordID,
-        loan_status: false
-      }
-    if(requestor){
-      requestor.requests.push(tradeRequest);
-      TraderCollection.update(requestor._id,
-        {$set: 
-          { requests: requestor.requests }
-        });
-    } else {
-      let trade: Traders = {
-        id: uid,
-        requests: [tradeRequest]
-      }
-      TraderCollection.insert(trade);
-    }
-    if(owner){
-      owner.requests.push(tradeRequest);
-      TraderCollection.update(owner._id,
-        {$set: 
-          { offers: owner.requests }
-        });
-    } else {
-      let trade: Traders = {
-        id: record.owner,
-        offers: [tradeRequest]
-      }
-      TraderCollection.insert(trade);
-    }
-    this.router.navigate(['/at/records']);
+  requestTrade(record){
+    console.log('requestTrade', record)
+    let uid = this._auth.getUID();
+    MeteorObservable.call('requestTrade', record.owner, uid, record._id)
+      .subscribe(() => {
+        console.log('record requested.');
+      }, (error) => {
+        console.log(`Failed to request due to ${error}`);
+      });
+
+    // let uid = this._auth.getUID(),
+    //   record = RecordCollection.findOne({_id: this.recordID}),
+    //   requestor: any = TraderCollection.findOne({id: uid}),
+    //   owner: any = TraderCollection.findOne({id: record.owner}),
+    //   tradeRequest = { 
+    //     requestor_id: uid,
+    //     owner_id: record.owner,
+    //     record_id: this.recordID,
+    //     loan_status: false
+    //   }
+    // if(requestor){
+    //   requestor.requests.push(tradeRequest);
+    //   TraderCollection.update(requestor._id,
+    //     {$set: 
+    //       { requests: requestor.requests }
+    //     });
+    // } else {
+    //   let trade: Traders = {
+    //     id: uid,
+    //     requests: [tradeRequest]
+    //   }
+    //   TraderCollection.insert(trade);
+    // }
+    // if(owner){
+    //   owner.requests.push(tradeRequest);
+    //   TraderCollection.update(owner._id,
+    //     {$set: 
+    //       { offers: owner.requests }
+    //     });
+    // } else {
+    //   let trade: Traders = {
+    //     id: record.owner,
+    //     offers: [tradeRequest]
+    //   }
+    //   TraderCollection.insert(trade);
+    // }
   }
 
   removeRecord(){

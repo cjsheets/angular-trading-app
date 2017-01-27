@@ -15,6 +15,7 @@ import template from "./trades.view.html";
 import style from "./trades.view.scss";
 import { Observable } from 'rxjs/Observable';
 import { MeteorObservable } from 'meteor-rxjs';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 
 @Component({
@@ -24,8 +25,8 @@ import { MeteorObservable } from 'meteor-rxjs';
 })
 export class TradesComponent implements OnInit { 
   trader: Traders;
-  requestStatus = [];
-  offerStatus = [];
+    public trades$: ReplaySubject<{}> = new ReplaySubject(1);
+private bricks = []
 
   constructor(
     private _log: Logger,
@@ -37,54 +38,63 @@ export class TradesComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.trades$.subscribe((trades: any) =>{
+      this.bricks = [];
+      console.log('Trades: ', trades)
+      trades.forEach(trade =>{
+        this.bricks.push(trade);
+      })
+    })
     this.initTradesView();
   }
 
   initTradesView(){
-    console.log('initializing trades')
     let uid = this._auth.getUID(),
-      trader = TraderCollection.find({id: uid}).zone();
-    trader.subscribe(tradeStatus => {
-      if(tradeStatus[0].hasOwnProperty('requests'))
-        tradeStatus[0].requests.forEach(request => {
+      usersCollection = TraderCollection.find({id: uid}).zone();
+    usersCollection.subscribe(usersTrades => {
+      let trades = [];
+      if(usersTrades[0].hasOwnProperty('requests'))
+        usersTrades[0].requests.forEach(request => {
           let record = RecordCollection.findOne({_id: request.record_id})
-          this.requestStatus.push({
+          trades.push({
+            type: 'request',
             request: request,
             record: record
           });
         });
-      if(tradeStatus[0].hasOwnProperty('offers'))
-        tradeStatus[0].offers.forEach(offer => {
+      if(usersTrades[0].hasOwnProperty('offers'))
+        usersTrades[0].offers.forEach(offer => {
           let record = RecordCollection.findOne({_id: offer.record_id})
-          this.offerStatus.push({
+          trades.push({
+            type: 'offer',
             offer: offer,
             record: record
           });
         });
+        this.trades$.next(trades);
     });
-    console.log(this.requestStatus)
   }
 
   acceptTrade(offer){
     console.log('setting trader collection')
-    MeteorObservable.call('acceptTrade', offer.offer.owner_id, 
-      offer.offer.requestor_id, offer.offer.record_id)
+    MeteorObservable.call('acceptTrade', offer.owner_id, 
+      offer.requestor_id, offer.record_id)
       .subscribe(() => {
         console.log('User successfully invited.');
       }, (error) => {
         console.log(`Failed to invite due to ${error}`);
       });
-    
-      // TraderCollection.update(
-      //   {"$and": [
-      //     { "id": offer.offer.owner_id },
-      //     { "offers.requestor_id": offer.offer.requestor_id },
-      //     { "offers.record_id": offer.offer.record_id },
-      //     { "offers.loan_status": false }
-      //   ]},
-      // {"$set": { "offers.$.loan_status": true } }
-      // )
-      console.log('done')
+  }
+
+  returnRecord(request){
+    console.log('setting trader collection')
+    MeteorObservable.call('returnRecord', request.owner_id, 
+      request.requestor_id, request.record_id)
+      .subscribe(() => {
+        console.log('User successfully invited.');
+      }, (error) => {
+        console.log(`Failed to invite due to ${error}`);
+      });
   }
 
 }

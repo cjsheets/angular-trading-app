@@ -18,8 +18,6 @@ const routes: Routes = [
   { path: 'at/demo', component: DemoComponent },
   { path: 'at/records', component: RecordsComponent },
   { path: 'at/search', component: RecordsComponent },
-  { path: 'at/request/:rid', component: RecordsComponent },
-  { path: 'at/remove/:rid', component: RecordsComponent },
   { path: 'at/my-listings', component: RecordsComponent },
   { path: 'at/trades', component: TradesComponent },
   { path: 'at', component: WelcomeComponent },

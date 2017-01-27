@@ -37,15 +37,14 @@
               <span class="overlay-trade">
                 <div class="overlay-controls">
                   <span class="ot-left">
-                    <a href="{{brick.id}}">
+                    <a href="{{brick.url}}">
                       <i class="zmdi zmdi-lastfm"  placement="top"
                       [ngbTooltip]="tipContent"></i>
                     </a>
                   </span>
                   <span class="ot-right" *ngIf="!brick.mine">
                     <i class="zmdi zmdi-swap"  placement="top"
-                      ngbTooltip="Request a Trade"
-                      [routerLink]="['/at/request/' + brick.rid]" ></i>
+                      ngbTooltip="Request a Trade" (click)="requestTrade(brick)" ></i>
                   </span>
                   <span class="ot-right" *ngIf="brick.mine">
                     <i class="zmdi zmdi-close"  placement="top"

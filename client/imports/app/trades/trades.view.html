@@ -2,87 +2,84 @@
   <div class="row">
     <div class="col-sm">
       <h4>Pending Requests</h4>
-      <!--<span *ngFor="let request of requestStatus">
-        <p *ngIf="!request.loan_status">-->
 
-
-    <masonry [options]="{transitionDuration: '0.0000001s'}"
+      <masonry [options]="{transitionDuration: '0.0000001s'}"
         [useImagesLoaded]="true" class="brick-parent">
-        <span *ngFor="let request of requestStatus">
-          <span *ngIf="!request.loan_status">
-        <masonry-brick class="brick" class="brick-container brick">
-            <div class="brick-body">
-              <img class="pin" [src]="request.record.image">
-            </div>
-            <div class="brick-footer">
-              <div class="brick-button brick-button-info">
-                Cancel Request
+        <span *ngFor="let brick of bricks">
+          <span *ngIf="brick.type == 'request' && !brick.request.loan_status">
+            <masonry-brick class="brick" class="brick-container brick">
+              <div class="brick-body">
+                <img class="pin" [src]="brick.record.image">
               </div>
-            </div>
-          </masonry-brick>
+              <div class="brick-footer">
+                <div class="brick-button brick-button-info">
+                  Cancel Request
+                </div>
+              </div>
+            </masonry-brick>
           </span>
-          </span>
+        </span>
       </masonry>
 
-
-        <!--</p>
-      </span>-->
-    <masonry [options]="{transitionDuration: '0.0000001s'}"
-        [useImagesLoaded]="true" class="brick-parent">
-        <span *ngFor="let offer of offerStatus">
-          <span *ngIf="!offer.loan_status">
-        <masonry-brick class="brick" class="brick-container brick">
-            <div class="brick-body">
-              <img class="pin" [src]="offer.record.image">
-            </div>
-            <div class="brick-footer">
-              <div class="brick-button brick-button-success" (click)="acceptTrade(offer)">
-                Accept
+      <masonry [options]="{transitionDuration: '0.0000001s'}"
+      [useImagesLoaded]="true" class="brick-parent">
+        <span *ngFor="let brick of bricks">
+          <span *ngIf="brick.type == 'offer' && !brick.offer.loan_status">
+            <masonry-brick class="brick" class="brick-container brick">
+              <div class="brick-body">
+                <img class="pin" [src]="brick.record.image">
               </div>
-              <div class="brick-button brick-button-danger" (click)="declineTrade(offer)">
-                Decline
+              <div class="brick-footer">
+                <div class="brick-button brick-button-success"
+                  (click)="acceptTrade(brick.offer)">
+                  Accept
+                </div>
+                <div class="brick-button brick-button-danger"
+                  (click)="declineTrade(brick.offer)">
+                  Decline
+                </div>
               </div>
-            </div>
-          </masonry-brick>
+            </masonry-brick>
           </span>
-          </span>
+        </span>
       </masonry>
     </div>
+
     <div class="col-sm">
       <h4>Accepted Trades</h4>
-    <masonry [options]="{transitionDuration: '0.0000001s'}"
-        [useImagesLoaded]="true" class="brick-parent">
-        <span *ngFor="let request of requestStatus">
-          <span *ngIf="request.loan_status">
-        <masonry-brick class="brick" class="brick-container brick">
-            <div class="brick-body">
-              <img class="pin" [src]="request.record.image">
-            </div>
-            <div class="brick-footer">
-              <div class="brick-button brick-button-info">
-                Return Record
+
+      <masonry [options]="{transitionDuration: '0.0000001s'}"
+      [useImagesLoaded]="true" class="brick-parent">
+        <span *ngFor="let brick of bricks">
+          <span *ngIf="brick.type == 'request' && brick.request.loan_status">
+            <masonry-brick class="brick" class="brick-container brick">
+              <div class="brick-body">
+                <img class="pin" [src]="brick.record.image">
               </div>
-            </div>
-          </masonry-brick>
+              <div class="brick-footer">
+                <div class="brick-button brick-button-info"
+                  (click)="returnRecord(brick.request)">
+                  Return Record
+                </div>
+              </div>
+            </masonry-brick>
           </span>
-          </span>
+        </span>
       </masonry>
 
-
-        <!--</p>
-      </span>-->
-    <masonry [options]="{transitionDuration: '0.0000001s'}"
-        [useImagesLoaded]="true" class="brick-parent">
-        <span *ngFor="let offer of offerStatus">
-          <span *ngIf="offer.loan_status">
-        <masonry-brick class="brick" class="brick-container brick">
-            <div class="brick-body">
-              <img class="pin" [src]="offer.record.image">
-            </div>
-          </masonry-brick>
+      <masonry [options]="{transitionDuration: '0.0000001s'}"
+      [useImagesLoaded]="true" class="brick-parent">
+        <span *ngFor="let brick of bricks">
+          <span *ngIf="brick.type == 'offer' && brick.offer.loan_status">
+            <masonry-brick class="brick" class="brick-container brick">
+              <div class="brick-body">
+                <img class="pin" [src]="brick.record.image">
+              </div>
+            </masonry-brick>
           </span>
-          </span>
+        </span>
       </masonry>
+      
     </div>
   </div>
 </div>

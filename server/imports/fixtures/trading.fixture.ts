@@ -80,15 +80,15 @@ export function loadRecords() {
 }
 
 export function loadTraders() {
-  if (TraderCollection.find().cursor.count() === 0) {
-    const traders = [{
-      id: '3456456',
-      requests: [{
-        record_id: '684',
-        loan_status: false
-      }]
-    }];
+  // if (TraderCollection.find().cursor.count() === 0) {
+  //   const traders = [{
+  //     id: '3456456',
+  //     requests: [{
+  //       record_id: '684',
+  //       loan_status: false
+  //     }]
+  //   }];
  
-    traders.forEach((trader) => TraderCollection.insert(trader));
-  }
+  //   traders.forEach((trader) => TraderCollection.insert(trader));
+  // }
 }
