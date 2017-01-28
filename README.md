@@ -8,7 +8,7 @@ database synchronization.
 
 A demo version of this app is deployed at: [https://angular-trading.herokuapp.com/](https://angular-trading.herokuapp.com/)
 
-[[https://github.com/cjsheets/angular-trading-app/blob/master/public/img/app-screenshot.png|alt=screenshot]]
+![](public/img/app-screenshot.png|alt=screenshot)
 
 This project was built as part of the Free Code Camp cirriculum based 
 on the following user stories:
@@ -20,7 +20,7 @@ on the following user stories:
 
 ## Install
 
-If you need to install Meteor, run the following:
+If you need to install [Meteor](https://www.meteor.com/), run the following:
 
 ```
 curl https://install.meteor.com/ | sh
