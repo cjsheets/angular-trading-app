@@ -1,76 +1,90 @@
-# Angular2-Meteor Boilerplate
+# Manage a Record Trading Club
 
-[![bitHound Overall Score](https://www.bithound.io/github/Urigo/angular2-meteor-base/badges/score.svg)](https://www.bithound.io/github/Urigo/angular2-meteor-base) [![bitHound Dependencies](https://www.bithound.io/github/Urigo/angular2-meteor-base/badges/dependencies.svg)](https://www.bithound.io/github/Urigo/angular2-meteor-base/master/dependencies/npm)
+## Overview
 
+This app allows users to search for, list and trade records from their personal collection.
+The client is written with Angular v2.x and Typescript backed by Meteor.js v1.4 for real-time 
+database synchronization.
 
-## Usage
+A demo version of this app is deployed at: [https://angular-trading.herokuapp.com/](https://angular-trading.herokuapp.com/)
 
-Since Meteor v1.4 you can use one command to create a working Angular2 app based on this boilerplate:
+[[https://github.com/cjsheets/angular-trading-app/blob/master/public/img/app-screenshot.png|alt=screenshot]]
+
+This project was built as part of the Free Code Camp cirriculum based 
+on the following user stories:
+
+* I can view all books posted by every user.
+* I can add a new book.
+* I can update my settings to store my full name, city, and state.
+* I can propose a trade and wait for the other user to accept the trade.
+
+## Install
+
+If you need to install Meteor, run the following:
 
 ```
-meteor create --example angular2-boilerplate
+curl https://install.meteor.com/ | sh
 ```
 
-## NPM Scripts
+Clone this repository and install npm dependencies:
 
-This boilerplate comes with predefined NPM scripts, defined in `package.json`:
+```
+git clone git@github.com:cjsheets/angular-trading-app.git
+cd angular-trading-app
+npm install
+```
 
-- `$ npm run start` - Run the Meteor application.
-- `$ npm run start:prod` - Run the Meteor application in production mode.
-- `$ npm run build` - Creates a Meteor build version under `./build/` directory.
-- `$ npm run clear` - Resets Meteor's cache and clears the MongoDB collections.
-- `$ npm run meteor:update` - Updates Meteor's version and it's dependencies.
-- `$ npm run test` - Executes Meteor in test mode with Mocha.
-- `$ npm run test:ci` - Executes Meteor in test mode with Mocha for CI (run once).
+## Run
 
-## Boilerplate Contents
+To access the Last.FM API, [you'll need a key](http://www.last.fm/api). Once registered, create
+`package.json` in the root of the repository:
 
-This boilerplate contains the basics that requires to quick start with Angular2-Meteor application.
+```
+{
+  "public": {
+    "last_fm": {
+      "key" : "xxxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "api_url": "http://localhost:3000/api/proxy?"
+  }
+}
+```
+
+Finally, build and run the app using the settings file.
+
+```
+meteor run --settings settings.json
+```
+
+Navigate to `http://localhost:3000`
+
+## Technology Stack
 
 This package contains:
 
-- TypeScript support (with `@types`) and Angular 2 compilers for Meteor
-- Angular2-Meteor
-- Angular 2 (core, common, compiler, platform, router, forms)
-- SASS, LESS, CSS support (Also support styles encapsulation for Angular 2)
-- Testing framework with Mocha and Chai
-- [Meteor-RxJS](http://angular-meteor.com/meteor-rxjs/) support and usage
+| Front-End | Back-End |
+| ------- | ------- |
+| Angular v2.x | Meteor.js |
+| Meteor.js | MongoDB |
+| MiniMongo | Node.js |
+| RxJS |  |
+| HTML5/SCSS |  |
 
-This application also contains demo code:
+| Both | 
+| ------- |
+| Typescript |
+| Mocha/Chai | 
 
-- Main Component (`/client/app.component`)
-- Demo Child Component (`/client/imports/demo/demo.component`)
-- Demo Service (`/client/imports/demo/demo-data.service`)
-- Demo Mongo Collection (`/both/demo.collection.ts`) with a TypeScript interface as model.
+Deployed to [Heroku](https://www.heroku.com/) using [this buildpack](https://github.com/AdmitHub/meteor-buildpack-horse)
 
-The Main component loads the child component, which uses the demo service that gets it's data from the demo collection.
 
 ### Folder Structure
 
 The folder structure is a mix between [Angular 2 recommendation](https://johnpapa.net/angular-2-styles/) and [Meteor 1.3 recommendation](https://guide.meteor.com/structure.html).
 
-### Client
-
-The `client` folder contains single TypeScript (`.ts`) file which is the main file (`/client/app.component.ts`), and bootstrap's the Angular 2 application.
-
-The main component uses HTML template and SASS file.
-
-The `index.html` file is the main HTML which loads the application by using the main component selector (`<app>`).
-
-All the other client files are under `client/imports` and organized by the context of the components (in our example, the context is `demo`).
-
-
-### Server
-
-The `server` folder contain single TypeScript (`.ts`) file which is the main file (`/server/main.ts`), and creates the main server instance, and the starts it.
-
-All other server files should be located under `/server/imports`.
-
-### Common
-
-Example for common files in our app, is the MongoDB collection we create - it located under `/both/demo-collection.ts` and it can be imported from both client and server code.
-
 ### Testing
+
+* *Work in progress*
 
 The testing environment in this boilerplate based on [Meteor recommendation](https://guide.meteor.com/testing.html), and uses Mocha as testing framework along with Chai for assertion.
 
@@ -78,15 +92,14 @@ There is a main test file that initialize Angular 2 tests library, it located un
 
 All other test files are located near the component/service it tests, with the `.test.ts` extension.
 
-The `DemoComponent` contains example for Angular 2 tests for Component, and in the server side there is an example for testing Meteor collections and stub data.
+### To-Do
 
-## To-Do
-
-* Determine why `list albums` isn't always first tile
-* prevent duplicate requests
 * lint the code for each app
 * write tests for each app
-* investigate mutation for initTradesView() data retrieval 
-* remove redundant code in trades using templates 
-* eliminate the duplicate nested `request` and `offer` variables in trade view 
 * change notification icon for different trade states
+
+### License
+
+MIT License
+
+[![Analytics](https://cjs-beacon.appspot.com/UA-10006093-3/github/cjsheets/angular-trading-app?pixel)](https://github.com/cjsheets/angular-trading-app)
