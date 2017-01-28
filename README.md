@@ -8,7 +8,7 @@ database synchronization.
 
 A demo version of this app is deployed at: [https://angular-trading.herokuapp.com/](https://angular-trading.herokuapp.com/)
 
-![](public/img/app-screenshot.png|alt=screenshot)
+![](public/img/app-screenshot.png?raw=true)
 
 This project was built as part of the Free Code Camp cirriculum based 
 on the following user stories:
