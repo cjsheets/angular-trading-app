@@ -94,9 +94,10 @@ All other test files are located near the component/service it tests, with the `
 
 ### To-Do
 
-* lint the code for each app
+* lint the code for each app (fix lint errors)
 * write tests for each app
 * change notification icon for different trade states
+* add typecasting to all possible functions
 
 ### License
 

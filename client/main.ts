@@ -1,10 +1,10 @@
-import "angular2-meteor-polyfills";
+import 'angular2-meteor-polyfills';
 
 import '../shared/methods/trading.methods';
 
-import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import { enableProdMode } from "@angular/core";
-import { AppModule } from "./imports/app";
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { AppModule } from './imports/app';
 
 enableProdMode();
 

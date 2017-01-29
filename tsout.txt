@@ -1,0 +1,568 @@
+
+typings.d.ts[87, 3]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+typings.d.ts[102, 3]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+typings.d.ts[8, 16]: " should be '
+typings.d.ts[13, 16]: " should be '
+typings.d.ts[18, 16]: " should be '
+typings.d.ts[23, 16]: " should be '
+typings.d.ts[28, 16]: " should be '
+typings.d.ts[33, 16]: " should be '
+typings.d.ts[34, 25]: " should be '
+typings.d.ts[46, 16]: " should be '
+shared/methods/trading.methods.ts[15, 7]: if statements must be braced
+shared/methods/trading.methods.ts[35, 7]: if statements must be braced
+shared/methods/trading.methods.ts[42, 7]: if statements must be braced
+shared/methods/trading.methods.ts[50, 7]: if statements must be braced
+shared/methods/trading.methods.ts[75, 7]: if statements must be braced
+shared/methods/trading.methods.ts[79, 7]: if statements must be braced
+shared/methods/trading.methods.ts[82, 7]: if statements must be braced
+shared/methods/trading.methods.ts[90, 7]: if statements must be braced
+shared/methods/trading.methods.ts[96, 7]: if statements must be braced
+shared/methods/trading.methods.ts[124, 7]: if statements must be braced
+shared/methods/trading.methods.ts[154, 7]: if statements must be braced
+shared/methods/trading.methods.ts[178, 7]: if statements must be braced
+shared/methods/trading.methods.ts[202, 4]: file should end with a newline
+shared/methods/trading.methods.ts[17, 1]: trailing whitespace
+shared/methods/trading.methods.ts[18, 32]: trailing whitespace
+shared/methods/trading.methods.ts[101, 24]: trailing whitespace
+shared/methods/trading.methods.ts[110, 22]: trailing whitespace
+shared/methods/trading.methods.ts[1, 34]: " should be '
+shared/methods/trading.methods.ts[2, 34]: " should be '
+shared/methods/trading.methods.ts[3, 25]: " should be '
+shared/methods/trading.methods.ts[38, 52]: " should be '
+shared/methods/trading.methods.ts[39, 13]: " should be '
+shared/methods/trading.methods.ts[40, 13]: " should be '
+shared/methods/trading.methods.ts[45, 56]: " should be '
+shared/methods/trading.methods.ts[46, 13]: " should be '
+shared/methods/trading.methods.ts[47, 13]: " should be '
+shared/methods/trading.methods.ts[48, 13]: " should be '
+shared/methods/trading.methods.ts[55, 10]: " should be '
+shared/methods/trading.methods.ts[55, 21]: " should be '
+shared/methods/trading.methods.ts[56, 11]: " should be '
+shared/methods/trading.methods.ts[57, 11]: " should be '
+shared/methods/trading.methods.ts[61, 10]: " should be '
+shared/methods/trading.methods.ts[61, 21]: " should be '
+shared/methods/trading.methods.ts[62, 11]: " should be '
+shared/methods/trading.methods.ts[63, 11]: " should be '
+shared/methods/trading.methods.ts[67, 33]: " should be '
+shared/methods/trading.methods.ts[78, 50]: " should be '
+shared/methods/trading.methods.ts[80, 35]: " should be '
+shared/methods/trading.methods.ts[80, 55]: " should be '
+shared/methods/trading.methods.ts[80, 69]: " should be '
+shared/methods/trading.methods.ts[81, 46]: " should be '
+shared/methods/trading.methods.ts[83, 35]: " should be '
+shared/methods/trading.methods.ts[83, 51]: " should be '
+shared/methods/trading.methods.ts[83, 65]: " should be '
+shared/methods/trading.methods.ts[85, 45]: " should be '
+shared/methods/trading.methods.ts[86, 13]: " should be '
+shared/methods/trading.methods.ts[87, 13]: " should be '
+shared/methods/trading.methods.ts[88, 13]: " should be '
+shared/methods/trading.methods.ts[92, 46]: " should be '
+shared/methods/trading.methods.ts[93, 13]: " should be '
+shared/methods/trading.methods.ts[94, 13]: " should be '
+shared/methods/trading.methods.ts[99, 33]: " should be '
+shared/methods/trading.methods.ts[100, 10]: " should be '
+shared/methods/trading.methods.ts[101, 11]: " should be '
+shared/methods/trading.methods.ts[108, 33]: " should be '
+shared/methods/trading.methods.ts[109, 10]: " should be '
+shared/methods/trading.methods.ts[110, 11]: " should be '
+shared/methods/trading.methods.ts[127, 33]: " should be '
+shared/methods/trading.methods.ts[127, 49]: " should be '
+shared/methods/trading.methods.ts[128, 9]: " should be '
+shared/methods/trading.methods.ts[129, 11]: " should be '
+shared/methods/trading.methods.ts[130, 11]: " should be '
+shared/methods/trading.methods.ts[131, 11]: " should be '
+shared/methods/trading.methods.ts[133, 10]: " should be '
+shared/methods/trading.methods.ts[133, 20]: " should be '
+shared/methods/trading.methods.ts[135, 33]: " should be '
+shared/methods/trading.methods.ts[135, 53]: " should be '
+shared/methods/trading.methods.ts[136, 9]: " should be '
+shared/methods/trading.methods.ts[137, 11]: " should be '
+shared/methods/trading.methods.ts[138, 11]: " should be '
+shared/methods/trading.methods.ts[139, 11]: " should be '
+shared/methods/trading.methods.ts[141, 10]: " should be '
+shared/methods/trading.methods.ts[141, 20]: " should be '
+shared/methods/trading.methods.ts[144, 11]: " should be '
+shared/methods/trading.methods.ts[145, 10]: " should be '
+shared/methods/trading.methods.ts[145, 20]: " should be '
+shared/methods/trading.methods.ts[157, 33]: " should be '
+shared/methods/trading.methods.ts[158, 10]: " should be '
+shared/methods/trading.methods.ts[158, 21]: " should be '
+shared/methods/trading.methods.ts[159, 11]: " should be '
+shared/methods/trading.methods.ts[160, 11]: " should be '
+shared/methods/trading.methods.ts[161, 11]: " should be '
+shared/methods/trading.methods.ts[164, 33]: " should be '
+shared/methods/trading.methods.ts[165, 10]: " should be '
+shared/methods/trading.methods.ts[165, 21]: " should be '
+shared/methods/trading.methods.ts[166, 11]: " should be '
+shared/methods/trading.methods.ts[167, 11]: " should be '
+shared/methods/trading.methods.ts[168, 11]: " should be '
+shared/methods/trading.methods.ts[181, 33]: " should be '
+shared/methods/trading.methods.ts[182, 10]: " should be '
+shared/methods/trading.methods.ts[182, 21]: " should be '
+shared/methods/trading.methods.ts[183, 11]: " should be '
+shared/methods/trading.methods.ts[184, 11]: " should be '
+shared/methods/trading.methods.ts[185, 11]: " should be '
+shared/methods/trading.methods.ts[188, 33]: " should be '
+shared/methods/trading.methods.ts[189, 10]: " should be '
+shared/methods/trading.methods.ts[189, 21]: " should be '
+shared/methods/trading.methods.ts[190, 11]: " should be '
+shared/methods/trading.methods.ts[191, 11]: " should be '
+shared/methods/trading.methods.ts[192, 11]: " should be '
+shared/methods/trading.methods.ts[196, 11]: " should be '
+shared/methods/trading.methods.ts[197, 10]: " should be '
+shared/methods/trading.methods.ts[197, 20]: " should be '
+shared/methods/trading.methods.ts[12, 47]: Missing semicolon
+shared/methods/trading.methods.ts[14, 32]: Missing semicolon
+shared/methods/trading.methods.ts[32, 47]: Missing semicolon
+shared/methods/trading.methods.ts[34, 32]: Missing semicolon
+shared/methods/trading.methods.ts[74, 32]: Missing semicolon
+shared/methods/trading.methods.ts[123, 32]: Missing semicolon
+shared/methods/trading.methods.ts[153, 32]: Missing semicolon
+shared/methods/trading.methods.ts[177, 32]: Missing semicolon
+shared/methods/trading.methods.ts[15, 9]: missing whitespace
+shared/methods/trading.methods.ts[35, 9]: missing whitespace
+shared/methods/trading.methods.ts[42, 9]: missing whitespace
+shared/methods/trading.methods.ts[50, 9]: missing whitespace
+shared/methods/trading.methods.ts[75, 9]: missing whitespace
+shared/methods/trading.methods.ts[79, 9]: missing whitespace
+shared/methods/trading.methods.ts[82, 9]: missing whitespace
+shared/methods/trading.methods.ts[90, 9]: missing whitespace
+shared/methods/trading.methods.ts[96, 9]: missing whitespace
+shared/methods/trading.methods.ts[124, 9]: missing whitespace
+shared/methods/trading.methods.ts[154, 9]: missing whitespace
+shared/methods/trading.methods.ts[178, 9]: missing whitespace
+shared/collections/trading.collection.ts[22, 4]: file should end with a newline
+shared/collections/trading.collection.ts[11, 1]: trailing whitespace
+shared/collections/trading.collection.ts[1, 33]: " should be '
+shared/collections/trading.collection.ts[2, 32]: " should be '
+shared/collections/trading.collection.ts[4, 73]: " should be '
+shared/collections/trading.collection.ts[6, 73]: " should be '
+shared/collections/demo.collection.ts[1, 33]: " should be '
+shared/collections/demo.collection.ts[2, 20]: " should be '
+shared/collections/demo.collection.ts[4, 68]: " should be '
+shared/models/trading.model.ts[19, 25]: Interface properties should be separated by semicolons
+shared/models/trading.model.ts[20, 25]: Interface properties should be separated by semicolons
+shared/models/trading.model.ts[3, 12]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[4, 12]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[5, 12]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[6, 12]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[7, 12]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[8, 12]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[13, 12]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[19, 16]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[20, 16]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[21, 16]: expected nospace before colon in property-declaration
+shared/models/trading.model.ts[22, 16]: expected nospace before colon in property-declaration
+meteor.d.ts[229, 15]: Class name must be in pascal case
+meteor.d.ts[234, 15]: Class name must be in pascal case
+meteor.d.ts[25, 7]: comment must start with a space
+meteor.d.ts[85, 9]: comment must start with a space
+meteor.d.ts[255, 9]: comment must start with a space
+meteor.d.ts[511, 1]: Exceeds maximum line length of 140
+meteor.d.ts[215, 7]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[474, 7]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[486, 7]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[489, 7]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[493, 7]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[733, 7]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[737, 7]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[828, 3]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[832, 3]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[839, 3]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[879, 5]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[885, 5]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[900, 5]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[912, 5]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+meteor.d.ts[152, 1]: trailing whitespace
+meteor.d.ts[36, 17]: variable 'Meteor' used before declaration
+meteor.d.ts[45, 16]: variable 'Meteor' used before declaration
+meteor.d.ts[67, 12]: variable 'Meteor' used before declaration
+meteor.d.ts[71, 48]: variable 'Meteor' used before declaration
+meteor.d.ts[83, 15]: variable 'Meteor' used before declaration
+meteor.d.ts[153, 17]: variable 'Meteor' used before declaration
+meteor.d.ts[169, 16]: variable 'Meteor' used before declaration
+meteor.d.ts[173, 21]: variable 'Meteor' used before declaration
+meteor.d.ts[185, 56]: variable 'Meteor' used before declaration
+meteor.d.ts[186, 42]: variable 'Meteor' used before declaration
+meteor.d.ts[187, 40]: variable 'Meteor' used before declaration
+meteor.d.ts[188, 40]: variable 'Meteor' used before declaration
+meteor.d.ts[189, 40]: variable 'Meteor' used before declaration
+meteor.d.ts[190, 41]: variable 'Meteor' used before declaration
+meteor.d.ts[191, 39]: variable 'Meteor' used before declaration
+meteor.d.ts[270, 17]: variable 'Meteor' used before declaration
+meteor.d.ts[279, 22]: variable 'Meteor' used before declaration
+meteor.d.ts[280, 22]: variable 'Meteor' used before declaration
+meteor.d.ts[281, 20]: variable 'Meteor' used before declaration
+meteor.d.ts[369, 17]: variable 'Meteor' used before declaration
+meteor.d.ts[378, 12]: variable 'Meteor' used before declaration
+meteor.d.ts[389, 25]: variable 'Meteor' used before declaration
+meteor.d.ts[425, 22]: variable 'Meteor' used before declaration
+meteor.d.ts[93, 17]: variable 'Mongo' used before declaration
+meteor.d.ts[295, 17]: variable 'Mongo' used before declaration
+meteor.d.ts[62, 9]: variable 'settings' used before declaration
+meteor.d.ts[461, 12]: variable 'Meteor' used before declaration
+meteor.d.ts[491, 48]: variable 'Meteor' used before declaration
+meteor.d.ts[567, 17]: variable 'Meteor' used before declaration
+meteor.d.ts[614, 24]: variable 'Meteor' used before declaration
+meteor.d.ts[615, 55]: variable 'Meteor' used before declaration
+meteor.d.ts[616, 22]: variable 'Meteor' used before declaration
+meteor.d.ts[624, 12]: variable 'Meteor' used before declaration
+meteor.d.ts[688, 35]: variable 'Meteor' used before declaration
+meteor.d.ts[689, 42]: variable 'Meteor' used before declaration
+meteor.d.ts[770, 12]: variable 'Meteor' used before declaration
+meteor.d.ts[861, 12]: variable 'Meteor' used before declaration
+meteor.d.ts[879, 17]: variable 'Meteor' used before declaration
+meteor.d.ts[20, 12]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[21, 12]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[22, 12]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[23, 12]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[24, 12]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[26, 12]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[62, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[389, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[407, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[466, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[479, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[497, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[505, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[533, 3]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[551, 3]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[568, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[590, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[591, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[592, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[609, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[612, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[618, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[627, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[679, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[692, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[740, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[750, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[755, 5]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[863, 10]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[872, 10]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[892, 10]: Forbidden 'var' keyword, use 'let' or 'const' instead
+meteor.d.ts[18, 16]: " should be '
+meteor.d.ts[35, 16]: " should be '
+meteor.d.ts[66, 16]: " should be '
+meteor.d.ts[67, 26]: " should be '
+meteor.d.ts[92, 16]: " should be '
+meteor.d.ts[106, 16]: " should be '
+meteor.d.ts[135, 16]: " should be '
+meteor.d.ts[150, 16]: " should be '
+meteor.d.ts[151, 25]: " should be '
+meteor.d.ts[200, 16]: " should be '
+meteor.d.ts[226, 16]: " should be '
+meteor.d.ts[269, 16]: " should be '
+meteor.d.ts[294, 16]: " should be '
+meteor.d.ts[359, 16]: " should be '
+meteor.d.ts[368, 16]: " should be '
+meteor.d.ts[377, 16]: " should be '
+meteor.d.ts[378, 26]: " should be '
+meteor.d.ts[460, 16]: " should be '
+meteor.d.ts[461, 26]: " should be '
+meteor.d.ts[521, 16]: " should be '
+meteor.d.ts[564, 16]: " should be '
+meteor.d.ts[565, 25]: " should be '
+meteor.d.ts[623, 16]: " should be '
+meteor.d.ts[624, 26]: " should be '
+meteor.d.ts[727, 16]: " should be '
+meteor.d.ts[769, 16]: " should be '
+meteor.d.ts[770, 26]: " should be '
+meteor.d.ts[792, 16]: " should be '
+meteor.d.ts[860, 16]: " should be '
+meteor.d.ts[861, 26]: " should be '
+meteor.d.ts[889, 16]: " should be '
+meteor.d.ts[890, 26]: " should be '
+client/lib/init.test.ts[2, 8]: " should be '
+client/lib/init.test.ts[3, 8]: " should be '
+client/lib/init.test.ts[4, 8]: " should be '
+client/lib/init.test.ts[5, 8]: " should be '
+client/lib/init.test.ts[6, 8]: " should be '
+client/lib/init.test.ts[9, 8]: " should be '
+client/lib/init.test.ts[12, 37]: " should be '
+client/lib/init.test.ts[13, 76]: " should be '
+client/lib/init.test.ts[23, 29]: " should be '
+client/imports/app/app.component.ts[1, 27]: " should be '
+client/imports/app/app.component.ts[2, 22]: " should be '
+client/imports/app/app.component.ts[3, 19]: " should be '
+client/imports/app/app.component.ts[5, 13]: " should be '
+client/imports/app/app.module.ts[1, 26]: " should be '
+client/imports/app/app.module.ts[2, 31]: " should be '
+client/imports/app/app.module.ts[3, 30]: " should be '
+client/imports/app/app.module.ts[4, 33]: " should be '
+client/imports/app/navbar/navbar.component.ts[21, 2]: file should end with a newline
+client/imports/app/navbar/navbar.component.ts[13, 31]: trailing whitespace
+client/imports/app/navbar/navbar.component.ts[5, 22]: " should be '
+client/imports/app/navbar/navbar.component.ts[6, 19]: " should be '
+client/imports/app/navbar/routing.module.ts[26, 37]: file should end with a newline
+client/imports/app/navbar/auth.service.ts[12, 41]: Missing semicolon
+client/imports/app/navbar/auth.service.ts[31, 27]: Missing semicolon
+client/imports/app/navbar/login-modal/login-modal.component.ts[2, 3]: comment must start with a space
+client/imports/app/navbar/login-modal/login-modal.component.ts[14, 35]: trailing whitespace
+client/imports/app/navbar/login-modal/login-modal.component.ts[6, 22]: " should be '
+client/imports/app/navbar/login-modal/login-modal.component.ts[7, 19]: " should be '
+client/imports/app/navbar/social-auth/social-auth.component.ts[3, 3]: comment must start with a space
+client/imports/app/navbar/social-auth/social-auth.component.ts[15, 5]: comment must start with a space
+client/imports/app/navbar/social-auth/social-auth.component.ts[14, 1]: trailing whitespace
+client/imports/app/navbar/social-auth/social-auth.component.ts[4, 22]: " should be '
+client/imports/app/navbar/social-auth/social-auth.component.ts[5, 19]: " should be '
+client/imports/app/navbar/navbar.module.ts[5, 3]: comment must start with a space
+client/imports/app/navbar/navbar.module.ts[27, 15]: trailing whitespace
+client/imports/app/routing.module.ts[35, 34]: file should end with a newline
+client/imports/app/routing.module.ts[4, 31]: " should be '
+client/imports/app/routing.module.ts[5, 34]: " should be '
+client/imports/app/routing.module.ts[6, 33]: " should be '
+client/imports/app/shared/sentry-io.service.ts[12, 2]: file should end with a newline
+client/imports/app/shared/sentry-io.service.ts[9, 23]: expected nospace before colon in call-signature
+client/imports/app/shared/sentry-io.service.ts[9, 19]: missing whitespace
+client/imports/app/shared/interface/logger.interface.ts[9, 2]: file should end with a newline
+client/imports/app/shared/interface/logger.interface.ts[2, 1]: space indentation expected
+client/imports/app/shared/interface/logger.interface.ts[3, 1]: space indentation expected
+client/imports/app/shared/interface/logger.interface.ts[4, 1]: space indentation expected
+client/imports/app/shared/interface/logger.interface.ts[5, 1]: space indentation expected
+client/imports/app/shared/interface/logger.interface.ts[6, 1]: space indentation expected
+client/imports/app/shared/interface/logger.interface.ts[7, 1]: space indentation expected
+client/imports/app/shared/interface/logger.interface.ts[8, 1]: space indentation expected
+client/imports/app/shared/interface/logger.interface.ts[2, 26]: expected nospace before colon in call-signature
+client/imports/app/shared/interface/logger.interface.ts[3, 25]: expected nospace before colon in call-signature
+client/imports/app/shared/interface/logger.interface.ts[4, 25]: expected nospace before colon in call-signature
+client/imports/app/shared/interface/logger.interface.ts[5, 28]: expected nospace before colon in call-signature
+client/imports/app/shared/interface/logger.interface.ts[6, 24]: expected nospace before colon in call-signature
+client/imports/app/shared/interface/logger.interface.ts[7, 23]: expected nospace before colon in call-signature
+client/imports/app/shared/interface/logger.interface.ts[8, 24]: expected nospace before colon in call-signature
+client/imports/app/shared/interface/last-fm.interface.ts[19, 2]: file should end with a newline
+client/imports/app/shared/interface/last-fm.interface.ts[2, 3]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[3, 5]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[5, 9]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[6, 9]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[7, 9]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[8, 11]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[10, 9]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[12, 13]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[13, 13]: " should be '
+client/imports/app/shared/interface/last-fm.interface.ts[18, 4]: Missing semicolon
+client/imports/app/shared/logger.service.ts[13, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[15, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[17, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[19, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[21, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[23, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[25, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[27, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[29, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[31, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[33, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[35, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[37, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[39, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[44, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[45, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[46, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[48, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[49, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[50, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[52, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[53, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[54, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[56, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[57, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[58, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[60, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[61, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[62, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[64, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[65, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[66, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[68, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[69, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[70, 1]: space indentation expected
+client/imports/app/shared/logger.service.ts[61, 34]: Calls to 'console.info' are not allowed.
+client/imports/app/shared/logger.service.ts[8, 89]: trailing whitespace
+client/imports/app/shared/logger.service.ts[45, 3]: expected an assignment or function call
+client/imports/app/shared/logger.service.ts[49, 3]: expected an assignment or function call
+client/imports/app/shared/logger.service.ts[53, 3]: expected an assignment or function call
+client/imports/app/shared/logger.service.ts[57, 3]: expected an assignment or function call
+client/imports/app/shared/logger.service.ts[61, 3]: expected an assignment or function call
+client/imports/app/shared/logger.service.ts[65, 3]: expected an assignment or function call
+client/imports/app/shared/logger.service.ts[69, 3]: expected an assignment or function call
+client/imports/app/shared/logger.service.ts[5, 25]: " should be '
+client/imports/app/shared/logger.service.ts[13, 33]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[17, 32]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[21, 32]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[25, 35]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[29, 31]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[33, 30]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[37, 31]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[44, 33]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[48, 32]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[52, 32]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[56, 35]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[60, 31]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[64, 30]: expected nospace before colon in call-signature
+client/imports/app/shared/logger.service.ts[68, 31]: expected nospace before colon in call-signature
+client/imports/app/shared/api.service.ts[48, 7]: comment must start with a space
+client/imports/app/shared/api.service.ts[25, 4]: missing whitespace
+client/imports/app/shared/api.service.ts[4, 24]: " should be '
+client/imports/app/shared/api.service.ts[5, 24]: " should be '
+client/imports/app/shared/api.service.ts[6, 29]: " should be '
+client/imports/app/shared/api.service.ts[18, 5]: " should be '
+client/imports/app/shared/api.service.ts[34, 27]: expected nospace before colon in call-signature
+client/imports/app/shared/api.service.ts[45, 37]: expected nospace before colon in call-signature
+client/imports/app/shared/api.service.ts[38, 43]: missing whitespace
+client/imports/app/shared/api.service.ts[40, 19]: missing whitespace
+client/imports/app/shared/api.service.ts[41, 41]: missing whitespace
+client/imports/app/shared/api.service.ts[41, 52]: missing whitespace
+client/imports/app/trades/trades.component.ts[56, 7]: if statements must be braced
+client/imports/app/trades/trades.component.ts[65, 7]: if statements must be braced
+client/imports/app/trades/trades.component.ts[115, 2]: file should end with a newline
+client/imports/app/trades/trades.component.ts[37, 3]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+client/imports/app/trades/trades.component.ts[26, 49]: trailing whitespace
+client/imports/app/trades/trades.component.ts[80, 57]: trailing whitespace
+client/imports/app/trades/trades.component.ts[91, 58]: trailing whitespace
+client/imports/app/trades/trades.component.ts[106, 60]: trailing whitespace
+client/imports/app/trades/trades.component.ts[41, 44]: missing whitespace
+client/imports/app/trades/trades.component.ts[44, 30]: missing whitespace
+client/imports/app/trades/trades.component.ts[51, 19]: missing whitespace
+client/imports/app/trades/trades.component.ts[78, 21]: missing whitespace
+client/imports/app/trades/trades.component.ts[89, 22]: missing whitespace
+client/imports/app/trades/trades.component.ts[100, 23]: missing whitespace
+client/imports/app/trades/trades.component.ts[104, 24]: missing whitespace
+client/imports/app/trades/trades.component.ts[10, 52]: " should be '
+client/imports/app/trades/trades.component.ts[11, 32]: " should be '
+client/imports/app/trades/trades.component.ts[14, 22]: " should be '
+client/imports/app/trades/trades.component.ts[15, 19]: " should be '
+client/imports/app/trades/trades.component.ts[29, 20]: Missing semicolon
+client/imports/app/trades/trades.component.ts[47, 7]: Missing semicolon
+client/imports/app/trades/trades.component.ts[43, 38]: Missing semicolon
+client/imports/app/trades/trades.component.ts[46, 9]: Missing semicolon
+client/imports/app/trades/trades.component.ts[58, 74]: Missing semicolon
+client/imports/app/trades/trades.component.ts[67, 72]: Missing semicolon
+client/imports/app/trades/trades.component.ts[79, 45]: Missing semicolon
+client/imports/app/trades/trades.component.ts[90, 45]: Missing semicolon
+client/imports/app/trades/trades.component.ts[105, 45]: Missing semicolon
+client/imports/app/trades/trades.component.ts[41, 44]: missing whitespace
+client/imports/app/trades/trades.component.ts[44, 30]: missing whitespace
+client/imports/app/trades/trades.component.ts[56, 9]: missing whitespace
+client/imports/app/trades/trades.component.ts[65, 9]: missing whitespace
+client/imports/app/records/records.component.ts[45, 9]: if statements must be braced
+client/imports/app/records/records.component.ts[134, 5]: for statements must be braced
+client/imports/app/records/records.component.ts[137, 2]: file should end with a newline
+client/imports/app/records/records.component.ts[50, 3]: Declaration of public instance member variable not allowed to appear after declaration of public instance member function
+client/imports/app/records/records.component.ts[28, 61]: trailing whitespace
+client/imports/app/records/records.component.ts[44, 69]: trailing whitespace
+client/imports/app/records/records.component.ts[132, 1]: trailing whitespace
+client/imports/app/records/records.component.ts[56, 46]: missing whitespace
+client/imports/app/records/records.component.ts[63, 32]: missing whitespace
+client/imports/app/records/records.component.ts[70, 20]: missing whitespace
+client/imports/app/records/records.component.ts[75, 19]: missing whitespace
+client/imports/app/records/records.component.ts[79, 16]: missing whitespace
+client/imports/app/records/records.component.ts[85, 48]: missing whitespace
+client/imports/app/records/records.component.ts[87, 44]: missing whitespace
+client/imports/app/records/records.component.ts[102, 23]: missing whitespace
+client/imports/app/records/records.component.ts[113, 20]: missing whitespace
+client/imports/app/records/records.component.ts[123, 23]: missing whitespace
+client/imports/app/records/records.component.ts[4, 52]: " should be '
+client/imports/app/records/records.component.ts[5, 32]: " should be '
+client/imports/app/records/records.component.ts[10, 24]: " should be '
+client/imports/app/records/records.component.ts[16, 22]: " should be '
+client/imports/app/records/records.component.ts[17, 19]: " should be '
+client/imports/app/records/records.component.ts[60, 7]: Missing semicolon
+client/imports/app/records/records.component.ts[58, 40]: Missing semicolon
+client/imports/app/records/records.component.ts[59, 58]: Missing semicolon
+client/imports/app/records/records.component.ts[84, 49]: Missing semicolon
+client/imports/app/records/records.component.ts[97, 11]: Missing semicolon
+client/imports/app/records/records.component.ts[86, 41]: Missing semicolon
+client/imports/app/records/records.component.ts[95, 15]: Missing semicolon
+client/imports/app/records/records.component.ts[103, 40]: Missing semicolon
+client/imports/app/records/records.component.ts[114, 37]: Missing semicolon
+client/imports/app/records/records.component.ts[124, 40]: Missing semicolon
+client/imports/app/records/records.component.ts[87, 38]: != should be !==
+client/imports/app/records/records.component.ts[81, 25]: expected nospace before colon in parameter
+client/imports/app/records/records.component.ts[56, 46]: missing whitespace
+client/imports/app/records/records.component.ts[85, 48]: missing whitespace
+client/imports/app/records/records.component.ts[45, 11]: missing whitespace
+client/imports/app/records/records.component.ts[63, 13]: missing whitespace
+client/imports/app/records/records.component.ts[87, 13]: missing whitespace
+client/imports/app/records/records.component.ts[134, 8]: missing whitespace
+client/imports/app/welcome/welcome.component.ts[19, 1]: trailing whitespace
+client/imports/app/welcome/welcome.component.ts[1, 35]: " should be '
+client/imports/app/welcome/welcome.component.ts[2, 28]: " should be '
+client/imports/app/welcome/welcome.component.ts[3, 22]: " should be '
+client/imports/app/welcome/welcome.component.ts[4, 19]: " should be '
+client/imports/app/welcome/welcome.component.ts[7, 13]: " should be '
+client/imports/app/welcome/welcome.component.ts[15, 21]: " should be '
+client/imports/app/demo/demo.component.ts[1, 35]: " should be '
+client/imports/app/demo/demo.component.ts[2, 28]: " should be '
+client/imports/app/demo/demo.component.ts[3, 33]: " should be '
+client/imports/app/demo/demo.component.ts[4, 22]: " should be '
+client/imports/app/demo/demo.component.ts[5, 22]: " should be '
+client/imports/app/demo/demo.component.ts[6, 19]: " should be '
+client/imports/app/demo/demo.component.ts[9, 13]: " should be '
+client/imports/app/demo/demo.component.ts[18, 21]: " should be '
+client/imports/app/demo/demo-data.service.ts[1, 28]: " should be '
+client/imports/app/demo/demo-data.service.ts[2, 34]: " should be '
+client/imports/app/demo/demo-data.service.ts[3, 22]: " should be '
+client/imports/app/demo/demo-data.service.ts[4, 32]: " should be '
+client/imports/app/demo/demo.component.test.ts[2, 22]: " should be '
+client/imports/app/demo/demo.component.test.ts[5, 43]: " should be '
+client/imports/app/demo/demo.component.test.ts[8, 29]: " should be '
+client/imports/app/demo/demo.component.test.ts[9, 20]: " should be '
+client/imports/app/demo/demo.component.test.ts[10, 31]: " should be '
+client/imports/app/demo/demo.component.test.ts[11, 43]: " should be '
+client/imports/app/demo/demo.component.test.ts[13, 10]: " should be '
+client/imports/app/demo/demo.component.test.ts[21, 13]: " should be '
+client/imports/app/demo/demo.component.test.ts[43, 12]: " should be '
+client/imports/app/demo/demo.component.test.ts[44, 8]: " should be '
+client/imports/app/demo/demo.component.test.ts[45, 53]: " should be '
+client/imports/app/demo/demo.component.test.ts[45, 63]: " should be '
+client/imports/app/demo/demo.component.test.ts[48, 8]: " should be '
+client/imports/app/demo/demo.component.test.ts[49, 52]: " should be '
+client/imports/app/demo/demo.component.test.ts[52, 8]: " should be '
+client/imports/app/demo/demo.component.test.ts[57, 8]: " should be '
+client/imports/app/demo/demo.component.test.ts[63, 29]: " should be '
+client/imports/app/demo/demo.component.test.ts[70, 12]: " should be '
+client/imports/app/demo/demo.component.test.ts[71, 8]: " should be '
+client/imports/app/demo/demo.component.test.ts[73, 68]: " should be '
+client/imports/app/demo/demo.component.test.ts[76, 8]: " should be '
+client/imports/app/demo/demo.component.test.ts[78, 68]: " should be '
+client/imports/app/demo/demo.component.test.ts[79, 40]: " should be '
+client/imports/app/demo/demo.component.test.ts[81, 68]: " should be '
+client/imports/app/demo/demo.component.test.ts[84, 8]: " should be '
+client/imports/app/demo/demo.component.test.ts[86, 73]: " should be '
+client/imports/app/demo/demo-data.service.test.ts[2, 24]: " should be '
+client/imports/app/demo/demo-data.service.test.ts[5, 33]: " should be '
+client/imports/app/demo/demo-data.service.test.ts[6, 28]: " should be '
+client/imports/app/demo/demo-data.service.test.ts[8, 10]: " should be '
+client/imports/app/demo/demo-data.service.test.ts[16, 6]: " should be '
+client/imports/app/index.ts[1, 15]: " should be '
+client/imports/app/index.ts[2, 15]: " should be '
+server/imports/server-main/main.ts[25, 7]: if statements must be braced
+server/imports/server-main/main.ts[28, 7]: if statements must be braced
+server/imports/server-main/main.ts[30, 7]: Forbidden 'var' keyword, use 'let' or 'const' instead
+server/imports/server-main/main.ts[1, 24]: " should be '
+server/imports/server-main/main.ts[2, 30]: " should be '
+server/imports/server-main/main.ts[3, 20]: " should be '
+server/imports/server-main/main.ts[4, 42]: " should be '
+server/imports/server-main/main.ts[44, 15]: " should be '
+server/imports/server-main/main.ts[47, 15]: " should be '
+server/imports/server-main/main.ts[50, 15]: " should be '
+server/imports/server-main/main.ts[1, 39]: Missing semicolon
+server/imports/server-main/main.ts[25, 46]: == should be ===
+server/imports/server-main/main.ts[25, 9]: missing whitespace
+server/imports/server-main/main.ts[28, 9]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[94, 2]: file should end with a newline
+server/imports/fixtures/trading.fixture.ts[1, 27]: trailing whitespace
+server/imports/fixtures/trading.fixture.ts[77, 1]: trailing whitespace
+server/imports/fixtures/trading.fixture.ts[91, 1]: trailing whitespace
+server/imports/fixtures/trading.fixture.ts[13, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[20, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[27, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[34, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[41, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[48, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[55, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[62, 7]: missing whitespace
+server/imports/fixtures/trading.fixture.ts[69, 7]: missing whitespace

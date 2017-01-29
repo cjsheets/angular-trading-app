@@ -16,7 +16,8 @@
     "@types/mocha": "2.2.34",
     "chai": "3.5.0",
     "chai-spies": "0.7.1",
-    "meteor-node-stubs": "0.2.4"
+    "meteor-node-stubs": "0.2.4",
+    "tslint": "^4.4.2"
   },
   "dependencies": {
     "@angular/common": "^2.4.4",
