@@ -10,8 +10,7 @@ A demo version of this app is deployed at: [https://angular-trading.herokuapp.co
 
 ![](public/img/app-screenshot.png?raw=true)
 
-This project was built as part of the Free Code Camp cirriculum based 
-on the following user stories:
+Part of the [FreeCodeCamp](https://www.freecodecamp.com/cjsheets) curriculum based on the following user stories:
 
 * I can view all books posted by every user.
 * I can add a new book.
@@ -34,7 +33,7 @@ cd angular-trading-app
 npm install
 ```
 
-## Run
+### Setup API Access
 
 To access the Last.FM API, [you'll need a key](http://www.last.fm/api). Once registered, create
 `package.json` in the root of the repository:
@@ -50,7 +49,9 @@ To access the Last.FM API, [you'll need a key](http://www.last.fm/api). Once reg
 }
 ```
 
-Finally, build and run the app using the settings file.
+## Run
+
+Build and run the app using the settings file.
 
 ```
 meteor run --settings settings.json
@@ -95,9 +96,11 @@ All other test files are located near the component/service it tests, with the `
 ### To-Do
 
 * lint the code for each app (fix lint errors)
-* write tests for each app
+* write Mocha/Chai tests
 * change notification icon for different trade states
 * add typecasting to all possible functions
+* revert console.log to _log, disable in prod
+* improve masonry loading output
 
 ### License
 
